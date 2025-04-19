@@ -1,5 +1,20 @@
 @import "tailwindcss";
-*{
-    margin: 0;
-    padding: 0;
+
+body {
+    font-family: "satoshi", sans-serif;
+}
+
+
+@font-face {
+    font-family: 'satoshi';
+    src: url('/src/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'intefral-bold';
+    src: url('/src/assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }

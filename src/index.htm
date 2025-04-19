@@ -1,15 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP.CO | eCommerce Website</title>
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="output.css" />
     <script src="app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- promo bar start -->
-     
+    <div class="bg-black text-center w-ful py-1">
+      <p class="text-white font-light text-[14px]">
+        Sign up and get 20% off to your first order.
+        <a href="#" class="hover:underline text-[16px]">Sign Up Now</a>
+      </p>
+    </div>
     <!-- promo bar end -->
-</body>
+    <!-- header start -->
+    <div class="py-[24px] px-[100px] intefral-bold">
+      <div class="flex gap-[40px] items-center justify-center">
+        <h1 class="[font-family:'intefral-bold'] text-[32px] text-black">
+          shop.co
+        </h1>
+        <nav>
+          <ul class="capitalize flex gap-6 items-center justify-center">
+            <li>shop</li>
+            <li>on sale</li>
+            <li>new arrivals</li>
+            <li>brands</li>
+          </ul>
+        </nav>
+        <div
+          class="flex px-3.5 py-3 gap-3 bg-[#F0F0F0] rounded-[62px] w-[30rem]"
+        >
+          <img
+            src="/src/assets/images/search.png"
+            alt="search-icon"
+            width="20px"
+          />
+          <input
+            type="text"
+            placeholder="Search for products..."
+            class="outline-none focus:border-b focus:border-black w-full"
+          />
+        </div>
+        <div class="flex gap-3.5">
+          <img
+            src="/src/assets/images/cart.png"
+            alt="cart-icon"
+            width="20px"
+            height="20px"
+          />
+          <img
+            src="/src/assets/images/user.png"
+            alt="user-icon"
+            width="20px"
+            height="20px"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+    <!-- hero section start -->
+    <div
+      class="bg-[url('/src/assets/images/hero-bg.png')] bg-cover bg-center w-full h-[100vh]"
+    >
+      <div class="absolute top-50 right-10">
+        <img src="/src/assets/images/bg-star.png" alt="star" width="100" />
+      </div>
+      <div class="absolute top-[470px] right-[550px]">
+        <img src="/src/assets/images/bg-star.png" alt="star" width="50" />
+      </div>
+      <div class="w-[60%] p-[100px] flex flex-col gap-[45px]">
+        <div class="flex gap-8 flex-col">
+          <h2 class="[font-family:'intefral-bold'] text-[64px] leading-16">
+            FIND CLOTHES THAT MATCHES YOUR STYLE
+          </h2>
+          <p class="opacity-60">
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </p>
+          <button
+            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black w-fit capitalize"
+          >
+            shop now
+          </button>
+        </div>
+        <div class="flex gap-8">
+          <div class="flex flex-col justify-center items-start capitalize">
+            <p class="text-[40px] font-bold">200+</p>
+            <p class="opacity-60">international brands</p>
+          </div>
+          <div class="flex flex-col justify-center items-start capitalize">
+            <p class="text-[40px] font-bold">2,000+</p>
+            <p class="opacity-60">High-Quality Products</p>
+          </div>
+          <div class="flex flex-col justify-center items-start capitalize">
+            <p class="text-[40px] font-bold">30,000+</p>
+            <p class="opacity-60">Happy Customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- hero section end -->
+  </body>
 </html>
