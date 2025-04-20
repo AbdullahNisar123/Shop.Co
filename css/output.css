@@ -196,6 +196,9 @@
   .bottom-full {
     bottom: 100%;
   }
+  .left-1 {
+    left: calc(var(--spacing) * 1);
+  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -205,11 +208,17 @@
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
   .hidden {
     display: none;
+  }
+  .table {
+    display: table;
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -256,12 +265,22 @@
   .w-full {
     width: 100%;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .-translate-x-1 {
+    --tw-translate-x: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -337,10 +356,10 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .bg-\[url\(\'\/src\/assets\/images\/signin-bg\.png\'\)\] {
+  .bg-\[url\(\'\/assets\/images\/signin-bg\.png\'\)\] {
     background-image: url('/assets/images/signin-bg.png');
   }
-  .bg-\[url\(\'\/src\/assets\/images\/signup-bg\.png\'\)\] {
+  .bg-\[url\(\'\/assets\/images\/signup-bg\.png\'\)\] {
     background-image: url('/assets/images/signup-bg.png');
   }
   .bg-contain {
@@ -372,6 +391,9 @@
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
@@ -486,6 +508,9 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-60 {
     opacity: 60%;
   }
@@ -498,6 +523,10 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-shadow-color: color-mix(in oklab, var(--color-neutral-700) var(--tw-shadow-alpha), transparent);
     }
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .outline-none {
     --tw-outline-style: none;
@@ -541,6 +570,11 @@
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
     }
   }
   .md\:w-20 {
@@ -593,7 +627,7 @@
       background-color: #F0F0F0;
     }
   }
-  .md\:bg-\[url\(\'\/src\/assets\/images\/hero-bg\.png\'\)\] {
+  .md\:bg-\[url\(\'\/assets\/images\/hero-bg\.png\'\)\] {
     @media (width >= 48rem) {
       background-image: url('/assets/images/hero-bg.png');
     }
@@ -802,6 +836,11 @@ body {
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -825,6 +864,7 @@ body {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
     }
   }
 }
