@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP.CO | SignUp</title>
-    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="/src/css/output.css" />
+    <script src="/src/js/app.js" defer></script>
   </head>
   <body>
     <div
@@ -35,11 +36,13 @@
           </p>
         </div>
         <div class="flex flex-col gap-4">
+          <p id="signin-error-msg" class="text-red-500 relative top-4"></p>
           <div class="flex flex-col border-[#E0E0E0] border">
             <div class="px-4 py-2.5 border-b border-[#E0E0E0]">
                 <p class="text-[10px] uppercase">email address</p>
                 <input
                   type="email"
+                  id="login-email"
                   class="outline-none text-[#212121] w-full text-[18px]"
                   placeholder="abdullahmalik.dev@gmail.com"
                 />
@@ -49,6 +52,7 @@
               <p class="text-[10px] uppercase">password</p>
               <input
                 type="password"
+                id="login-password"
                 class="outline-none text-[#212121] w-full text-[18px]"
                 placeholder="***********"
               />
@@ -65,9 +69,12 @@
         </div>
           <button
             class="w-full bg-black text-white uppercase px-[100px] py-[15px] rounded-[62px]"
+            onclick="logIn()"
+            id="login-btn"
           >
             Proceed
           </button>
+          
           <p class="uppercase text-[12px] text-center">or use</p>
           <div class="flex items-center justify-center gap-5">
             <div class="w-9 h-9 relative group cursor-pointer">

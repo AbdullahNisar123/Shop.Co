@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP.CO | SignUp</title>
-    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="/src/css/output.css" />
+    <script src="/src/js/app.js" defer></script>
   </head>
   <body>
     <div
@@ -22,7 +23,7 @@
         </a>
       </div>
       <div
-        class="w-[572px] h-[568px] bg-white shadow-lg shadow-neutral-700 px-[85px] py-[35px] flex flex-col gap-[32px]"
+        class="w-[572px] h-[568px] bg-white shadow-lg shadow-neutral-700 px-[85px] py-[35px] flex flex-col gap-[14px]"
       >
         <div class="text-center">
           <h1
@@ -35,11 +36,14 @@
           </p>
         </div>
         <div class="flex flex-col gap-4">
+          <p id="signup-error-msg" class="text-red-500 relative top-4"></p>
+
           <div class="flex flex-col border-[#E0E0E0] border">
             <div class="px-4 py-2.5 border-b border-[#E0E0E0]">
               <p class="text-[10px] uppercase">first name</p>
               <input
                 type="text"
+                id="signup-name"
                 class="outline-none text-[#212121] w-full text-[18px]"
                 placeholder="Abdullah"
               />
@@ -48,7 +52,8 @@
               <p class="text-[10px] uppercase">email address</p>
               <input
                 type="email"
-                class="outline-none text-[#212121] w-full text-[18px]"
+                id="signup-email"
+                class="outline-none text-[#212121] w-full text-[18px] focus:bg-white"
                 placeholder="abdullahmalik.dev@gmail.com"
               />
             </div>
@@ -56,22 +61,27 @@
               <p class="text-[10px] uppercase">password</p>
               <input
                 type="password"
+                id="signup-password"
                 class="outline-none text-[#212121] w-full text-[18px]"
                 placeholder="***********"
               />
             </div>
           </div>
           <label class="flex gap-4 items-center">
-            <input type="checkbox" class="w-5 h-5 form-checkbox" />
+            <input type="checkbox" class="w-5 h-5 form-checkbox" id="terms"/>
             <p class="text-[#616161] text-[13px]">
               I agree to the Terms of Service and Privacy Policy.
             </p>
           </label>
           <button
-            class="w-full bg-black text-white uppercase px-[100px] py-[15px] rounded-[62px]"
+            class="w-full bg-black text-white uppercase px-[100px] py-[15px] rounded-[62px] cursor-pointer"
+            onclick="signUp()"
+            id="signup-btn"
+
           >
             create an account
           </button>
+          
           <p class="uppercase text-[12px] text-center">or</p>
           <div class="flex items-center justify-center gap-5">
             <div class="w-9 h-9 relative group cursor-pointer">
