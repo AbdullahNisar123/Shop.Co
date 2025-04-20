@@ -11,14 +11,14 @@ body {
 
 @font-face {
     font-family: 'satoshi';
-    src: url('/src/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+    src: url('/assets/fonts/Satoshi-Variable.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'intefral-bold';
-    src: url('/src/assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('truetype');
+    src: url('/assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

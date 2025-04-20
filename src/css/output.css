@@ -338,10 +338,10 @@
     background-color: var(--color-white);
   }
   .bg-\[url\(\'\/src\/assets\/images\/signin-bg\.png\'\)\] {
-    background-image: url('/src/assets/images/signin-bg.png');
+    background-image: url('/assets/images/signin-bg.png');
   }
   .bg-\[url\(\'\/src\/assets\/images\/signup-bg\.png\'\)\] {
-    background-image: url('/src/assets/images/signup-bg.png');
+    background-image: url('/assets/images/signup-bg.png');
   }
   .bg-contain {
     background-size: contain;
@@ -595,7 +595,7 @@
   }
   .md\:bg-\[url\(\'\/src\/assets\/images\/hero-bg\.png\'\)\] {
     @media (width >= 48rem) {
-      background-image: url('/src/assets/images/hero-bg.png');
+      background-image: url('/assets/images/hero-bg.png');
     }
   }
   .md\:p-\[100px\] {
@@ -673,13 +673,13 @@ body {
 }
 @font-face {
   font-family: 'satoshi';
-  src: url('/src/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  src: url('/assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'intefral-bold';
-  src: url('/src/assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('truetype');
+  src: url('/assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }

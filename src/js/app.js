@@ -61,7 +61,7 @@ function signUp() {
     </span>
   `
     setTimeout(() => {
-        location.href = "/src/signin.html"
+        location.href = "/signin.html"
 
     }, 2000)
 }
@@ -100,7 +100,7 @@ function logIn() {
     </span>
   `
     setTimeout(() => {
-        location.href = "/src/index.htm"
+        location.href = "/index.htm"
 
     }, 2000)
     console.log(usersData)
