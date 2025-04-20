@@ -10,19 +10,26 @@
   <body>
     <!-- promo bar start -->
     <div class="bg-black text-center w-ful py-1">
-      <p class="text-white font-light text-[14px]">
+      <p class="text-white font-light md:text-[14px] text-[12px]">
         Sign up and get 20% off to your first order.
-        <a href="/src/signup.html" class="hover:underline text-[16px]">Sign Up Now</a>
+        <a href="/src/signup.html" class="hover:underline md:text-[16px] text-[14px]"
+          >Sign Up Now</a
+        >
       </p>
     </div>
     <!-- promo bar end -->
     <!-- header start -->
-    <div class="py-[24px] px-[80px]">
-      <div class="flex gap-[40px] items-center justify-center">
-        <a href="/src/index.htm" class="[font-family:'intefral-bold'] text-[32px] text-black">
-            shop.co
-          </a>
-        <nav>
+    <div class="md:py-[24px] py-[20px] md:px-[80px] px-4">
+      <div
+        class="flex md:gap-[40px] items-center md:justify-center justify-between"
+      >
+        <a
+          href="/src/index.htm"
+          class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black"
+        >
+          shop.co
+        </a>
+        <nav class="md:block hidden">
           <ul class="capitalize flex gap-6 items-center justify-center">
             <li>shop</li>
             <li>on sale</li>
@@ -30,22 +37,25 @@
             <li>brands</li>
           </ul>
         </nav>
-        <div
-          class="flex px-3.5 py-3 gap-3 bg-[#F0F0F0] rounded-[62px] w-[30rem]"
-        >
-          <img
-            src="/src/assets/images/search.png"
-            alt="search-icon"
-            width="20px"
-          />
-          <input
-            type="text"
-            placeholder="Search for products..."
-            class="outline-none focus:border-b focus:border-black w-full"
-          />
-        </div>
-        <div class="flex gap-3.5 items-center ">
-          <div class="w-7 h-7 flex items-center">
+
+        <div class="flex md:gap-3.5 gap-3 items-center">
+          <div
+            class="flex md:px-3.5 md:py-3 md:gap-3 md:bg-[#F0F0F0] rounded-[62px] md:w-[30rem]"
+          >
+            <div class="w-6">
+              <img
+                src="/src/assets/images/search.png"
+                alt="search-icon"
+                width="100"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Search for products..."
+              class="outline-none focus:border-b focus:border-black w-full hidden md:block"
+            />
+          </div>
+          <div class="w-7 h-7 items-center md:flex hidden">
             <img
               src="/src/assets/images/mdi-light-cart.png"
               alt="cart-icon"
@@ -61,13 +71,13 @@
           </div> -->
           <a
             href="/src/signin.html"
-            class="px-3 py-2 uppercase bg-transparent border border-black text-[12px] w-20"
+            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16"
           >
             sign in
           </a>
           <a
-          href="/src/signup.html"
-            class="px-3 py-2 uppercase bg-transparent border border-black text-[12px] w-20"
+            href="/src/signup.html"
+            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17"
           >
             sign up
           </a>
@@ -77,17 +87,21 @@
     <!-- header end -->
     <!-- hero section start -->
     <div
-      class="bg-[url('/src/assets/images/hero-bg.png')] bg-cover bg-center w-full h-[100vh]"
+      class="md:bg-[url('/src/assets/images/hero-bg.png')] bg-contain bg-no-repeat w-full"
     >
-      <div class="absolute top-50 right-10">
+      <div class="absolute top-50 right-10 md:block hidden">
         <img src="/src/assets/images/bg-star.png" alt="star" width="100" />
       </div>
-      <div class="absolute top-[470px] right-[550px]">
+      <div class="absolute top-[490px] right-[700px] md:block hidden">
         <img src="/src/assets/images/bg-star.png" alt="star" width="50" />
       </div>
-      <div class="w-[60%] p-[100px] flex flex-col gap-[45px]">
+      <div
+        class="md:w-[60%] w-full md:p-[100px] px-4 pt-10 flex flex-col md:gap-[45px] gap-5"
+      >
         <div class="flex gap-8 flex-col">
-          <h2 class="[font-family:'intefral-bold'] text-[64px] leading-16">
+          <h2
+            class="[font-family:'intefral-bold'] md:text-[64px] text-4xl md:leading-16 leading-9"
+          >
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h2>
           <p class="opacity-60">
@@ -96,25 +110,36 @@
             style.
           </p>
           <button
-            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black w-fit capitalize"
+            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black md:w-fit w-full capitalize"
           >
             shop now
           </button>
         </div>
-        <div class="flex gap-8">
+        <div class="flex gap-8 gap-y-3 flex-wrap justify-center">
           <div class="flex flex-col justify-center items-start capitalize">
-            <p class="text-[40px] font-bold">200+</p>
-            <p class="opacity-60">international brands</p>
+            <p class="md:text-[40px] text-2xl font-bold">200+</p>
+            <p class="opacity-60 md:text-[16px] text-[12px]">
+              international brands
+            </p>
           </div>
           <div class="flex flex-col justify-center items-start capitalize">
-            <p class="text-[40px] font-bold">2,000+</p>
-            <p class="opacity-60">High-Quality Products</p>
+            <p class="md:text-[40px] text-2xl font-bold">2,000+</p>
+            <p class="opacity-60 md:text-[16px] text-[12px]">
+              High-Quality Products
+            </p>
           </div>
-          <div class="flex flex-col justify-center items-start capitalize">
-            <p class="text-[40px] font-bold">30,000+</p>
-            <p class="opacity-60">Happy Customers</p>
+          <div
+            class="flex flex-col justify-center items-start capitalize mx-auto"
+          >
+            <p class="md:text-[40px] text-2xl font-bold">30,000+</p>
+            <p class="opacity-60 md:text-[16px] text-[12px]">Happy Customers</p>
           </div>
         </div>
+      </div>
+      <div
+        class="w-full h-[448px]"
+      >
+        <img src="/src/assets/images/hero-bg-phone.png" alt="hero section img" class="w-full">
       </div>
     </div>
     <!-- hero section end -->
