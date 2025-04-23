@@ -9,21 +9,24 @@
   </head>
   <body>
     <div
-      class="bg-[url('/assets/images/signup-bg.png')] bg-contain bg-no-repeat w-full flex flex-col justify-between items-center gap-11"
-    >
-      <div class="flex justify-between w-full px-[60px] py-[34px]">
-        <a href="/index.htm" class="[font-family:'intefral-bold'] text-[32px] text-black">
-            shop.co
-          </a>
+    class="bg-[url('/assets/images/signup-bg.png')] md:bg-cover bg-no-repeat w-full flex flex-col justify-evenly md:justify-between items-center h-[100vh] gap-5 bg-mobile-300"
+    
+  >
+      <div class="flex justify-between w-full px-5 md:px-[60px] py-[15px]">
+        <h1
+          class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
+        >
+          <a href="/index.htm"> shop.co </a>
+        </h1>
         <a
           href="/signin.html"
-          class="px-10 py-3 uppercase bg-transparent border border-black"
+          class="px-7 md:px-10 py-3 uppercase bg-transparent border border-black"
         >
           sign in
         </a>
       </div>
       <div
-        class="w-[572px] h-[568px] bg-white shadow-lg shadow-neutral-700 px-[85px] py-[35px] flex flex-col gap-[14px]"
+        class="bg-transparent md:bg-white md:shadow-lg  md:shadow-neutral-700 px-10 md:px-[85px] py-[25px] flex flex-col gap-[14px] w-full md:w-fit"
       >
         <div class="text-center">
           <h1
@@ -31,15 +34,15 @@
           >
             Sign up to SHOP.CO
           </h1>
-          <p class="text-[12px] font-normal text-[#757575]">
+          <p class="text-[12px] font-normal text-[#4e4e4e]">
             Quick & Simple way to Automate your payment
           </p>
         </div>
         <div class="flex flex-col gap-4">
           <p id="signup-error-msg" class="text-red-500 relative top-4"></p>
 
-          <div class="flex flex-col border-[#E0E0E0] border">
-            <div class="px-4 py-2.5 border-b border-[#E0E0E0]">
+          <div class="flex flex-col border-[#E0E0E0] border bg-white/70 ">
+            <div class="px-4 py-3.5 border-b border-[#E0E0E0]">
               <p class="text-[10px] uppercase">first name</p>
               <input
                 type="text"
@@ -48,16 +51,16 @@
                 placeholder="Abdullah"
               />
             </div>
-            <div class="px-4 py-2.5 border-b border-[#E0E0E0]">
+            <div class="px-4 py-3.5 border-b border-[#E0E0E0]">
               <p class="text-[10px] uppercase">email address</p>
               <input
                 type="email"
                 id="signup-email"
-                class="outline-none text-[#212121] w-full text-[18px] focus:bg-white"
+                class="outline-none text-[#212121] w-full text-[18px] focus:bg-transparent"
                 placeholder="abdullahmalik.dev@gmail.com"
               />
             </div>
-            <div class="px-4 py-2.5 border-b border-[#E0E0E0]">
+            <div class="px-4 py-3.5 border-b border-[#E0E0E0]">
               <p class="text-[10px] uppercase">password</p>
               <input
                 type="password"
@@ -68,20 +71,19 @@
             </div>
           </div>
           <label class="flex gap-4 items-center">
-            <input type="checkbox" class="w-5 h-5 form-checkbox" id="terms"/>
+            <input type="checkbox" class="w-5 h-5 form-checkbox" id="terms" />
             <p class="text-[#616161] text-[13px]">
               I agree to the Terms of Service and Privacy Policy.
             </p>
           </label>
           <button
-            class="w-full bg-black text-white uppercase px-[100px] py-[15px] rounded-[62px] cursor-pointer"
+            class="w-full bg-black text-white uppercase px-10 md:px-[100px] py-[15px] rounded-[62px] cursor-pointer"
             onclick="signUp()"
             id="signup-btn"
-
           >
             create an account
           </button>
-          
+
           <p class="uppercase text-[12px] text-center">or</p>
           <div class="flex items-center justify-center gap-5">
             <div class="w-9 h-9 relative group cursor-pointer">
@@ -122,7 +124,8 @@
       </div>
       <footer class="flex w-full justify-center items-center pb-[20px]">
         <p class="text-[#616161] text-[16px]">
-          © 2021. - 2025 All Rights Reserved. <span class="[font-family:'intefral-bold']">SHOP.CO</span>
+          © 2021. - 2025 All Rights Reserved.
+          <span class="[font-family:'intefral-bold']">SHOP.CO</span>
         </p>
       </footer>
     </div>

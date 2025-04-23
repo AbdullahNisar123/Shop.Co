@@ -55,3 +55,17 @@ body {
       opacity: 1;
     }
   }
+
+
+
+  @media (max-width: 767px) {
+    .bg-mobile-300 {
+      background-size: 300% !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .bg-mobile-300 {
+      background-size: contain !important;
+    }
+  }
