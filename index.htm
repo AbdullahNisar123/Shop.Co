@@ -89,16 +89,16 @@
     <!-- header end -->
     <!-- hero section start -->
     <div
-      class="md:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-no-repeat w-full"
+      class="lg:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-no-repeat w-full"
     >
-      <div class="absolute top-50 right-10 md:block hidden">
-        <img src="/assets/images/bg-star.png" alt="star" width="100" />
+      <div class="absolute top-50 right-10 md:block hidden transform -translate-y-1/2">
+        <img src="/assets/images/bg-star.png" alt="star"  class="w-[100px] h-auto animate-pulse" />
       </div>
       <div class="absolute top-[490px] right-[700px] md:block hidden">
-        <img src="/assets/images/bg-star.png" alt="star" width="50" />
+        <img src="/assets/images/bg-star.png" alt="star" class="w-[50px] h-auto animate-pulse"/>
       </div>
       <div
-        class="md:w-[60%] w-full md:p-[100px] px-4 pt-10 flex flex-col md:gap-[45px] gap-5"
+        class="md:w-[60%] w-full md:p-[100px] px-4 pt-5 flex flex-col md:gap-[45px] gap-5"
       >
         <div class="flex gap-8 flex-col">
           <h2
@@ -117,7 +117,7 @@
             shop now
           </button>
         </div>
-        <div class="flex gap-8 gap-y-3 flex-wrap justify-center">
+        <div class="flex gap-8 gap-y-3 flex-wrap justify-center md:justify-start">
           <div class="flex flex-col justify-center items-start capitalize">
             <p class="md:text-[40px] text-2xl font-bold">200+</p>
             <p class="opacity-60 md:text-[16px] text-[12px]">
@@ -131,7 +131,7 @@
             </p>
           </div>
           <div
-            class="flex flex-col justify-center items-start capitalize mx-auto"
+            class="flex flex-col  justify-center items-start capitalize md:mx-0 mx-auto"
           >
             <p class="md:text-[40px] text-2xl font-bold">30,000+</p>
             <p class="opacity-60 md:text-[16px] text-[12px]">Happy Customers</p>
@@ -139,11 +139,41 @@
         </div>
       </div>
       <div
-        class="w-full h-[448px] md:hidden block"
+        class="w-full md:hidden flex items-end"
       >
         <img src="/assets/images/hero-bg-phone.png" alt="hero section img" class="w-full">
       </div>
     </div>
     <!-- hero section end -->
+     <!-- brand name section start -->
+     <div class="bg-black w-full py-5 md:py-10 px-4 md:px-20">
+      <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-6 sm:gap-6 md:gap-8">
+        <!-- Versace -->
+        <div class="flex items-center w-[calc(50%-0.5rem)] sm:w-auto sm:min-w-[105px]">
+          <img src="/assets/images/versace.png" alt="versace" class="w-full h-auto object-contain max-h-8 sm:max-h-10">
+        </div>
+        
+        <!-- Zara -->
+        <div class="flex items-center w-[calc(50%-0.5rem)] sm:w-auto sm:min-w-[75px]">
+          <img src="/assets/images/zara-logo-1 1.png" alt="zara" class="w-full h-auto object-contain max-h-8 sm:max-h-10">
+        </div>
+        
+        <!-- Gucci -->
+        <div class="flex items-center w-[calc(50%-0.5rem)] sm:w-auto sm:min-w-[111px]">
+          <img src="/assets/images/gucci-logo-1 1.png" alt="gucci" class="w-full h-auto object-contain max-h-8 sm:max-h-10">
+        </div>
+        
+        <!-- Prada -->
+        <div class="flex items-center w-[calc(50%-0.5rem)] sm:w-auto sm:min-w-[115px]">
+          <img src="/assets/images/prada-logo-1 1.png" alt="prada" class="w-full h-auto object-contain max-h-8 sm:max-h-10">
+        </div>
+        
+        <!-- Calvin Klein -->
+        <div class="flex items-center w-[calc(50%-0.5rem)] sm:w-auto sm:min-w-[115px]">
+          <img src="/assets/images/calvin-klein.png" alt="calvin-klein" class="w-full h-auto object-contain max-h-8 sm:max-h-10">
+        </div>
+      </div>
+    </div>
+     <!-- brand name section end -->
   </body>
 </html>
