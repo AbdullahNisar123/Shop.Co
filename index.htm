@@ -39,7 +39,7 @@
           </ul>
         </nav>
 
-        <div class="flex md:gap-3.5 gap-3 items-center w-[40%]">
+        <div class="flex md:gap-3.5 gap-3 items-center md:w-[40%]">
           <div
             class="flex md:px-3.5 md:py-3 md:gap-3 md:bg-[#F0F0F0] rounded-[62px] md:w-[100%] items-center"
           >
@@ -88,10 +88,13 @@
     <!-- header end -->
     <!-- hero section start -->
     <div
-      class="lg:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-no-repeat w-full"
+      class="relative inset-0 md:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-bottom-right lg:bg-right  bg-no-repeat w-full "
     >
+    <div class="absolute inset-0 bg-white/50 rounded-[20px] lg:hidden"></div>
+
+    <div class="z-10 relative">
       <div
-        class="absolute top-50 right-10 md:block hidden transform -translate-y-1/2"
+        class="absolute top-50 right-10 lg:block hidden transform -translate-y-1/2"
       >
         <img
           src="/assets/images/bg-star.png"
@@ -99,7 +102,7 @@
           class="w-[100px] h-auto animate-pulse"
         />
       </div>
-      <div class="absolute top-[490px] right-[700px] md:block hidden">
+      <div class="absolute top-[490px] right-[700px] lg:block hidden">
         <img
           src="/assets/images/bg-star.png"
           alt="star"
@@ -107,7 +110,7 @@
         />
       </div>
       <div
-        class="md:w-[60%] w-full md:p-[100px] px-4 pt-5 flex flex-col md:gap-[45px] gap-5"
+        class="lg:w-[60%] w-full md:p-[100px] px-4 pt-5 flex flex-col md:gap-[45px] gap-5"
       >
         <div class="flex gap-8 flex-col">
           <h2
@@ -121,7 +124,7 @@
             style.
           </p>
           <button
-            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black md:w-fit w-full capitalize"
+            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black md:w-fit w-full capitalize border border-black/10 hover:bg-transparent hover:text-black cursor-pointer"
           >
             shop now
           </button>
@@ -156,6 +159,7 @@
           class="w-full"
         />
       </div>
+    </div>
     </div>
     <!-- hero section end -->
     <!-- brand name section start -->
@@ -222,7 +226,7 @@
     <!-- brand name section end -->
 
     <!-- body start -->
-    <div class="md:px-24 px-5 py-10">
+    <div class="md:px-24 px-5 py-10 -z-10">
       <!-- new arrivals section start -->
       <div
         class="flex flex-col gap-12 items-center border-b border-b-black/10 pb-10"
@@ -234,7 +238,7 @@
         </h2>
 
         <!-- Horizontal Scrolling Container -->
-        <div class="w-full overflow-x-auto pb-4">
+        <div class="w-full overflow-x-auto pb-4 scroll-smooth">
           <div
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
           >
@@ -359,7 +363,7 @@
         </div>
 
         <button
-          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit"
+          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
         >
           View All
         </button>
@@ -377,7 +381,7 @@
         </h2>
 
         <!-- Horizontal Scrolling Container -->
-        <div class="w-full overflow-x-auto pb-4">
+        <div class="w-full overflow-x-auto pb-4 scroll-smooth">
           <div
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
           >
@@ -502,7 +506,7 @@
         </div>
 
         <button
-          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit"
+          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
         >
           View All
         </button>
@@ -511,7 +515,9 @@
 
       <!-- browse by dress style section start -->
 
-      <div class="md:py-16 px-6 py-10 md:px-12 mt-10 md:mt-0 bg-[#F0F0F0] rounded-4xl">
+      <div
+        class="md:py-16 px-6 py-10 md:px-12 mt-10 md:mt-0 bg-[#F0F0F0] rounded-4xl"
+      >
         <div class="flex flex-col gap-16 sm:gap-7 w-full">
           <h2
             class="[font-family:'intefral-bold'] text-3xl md:text-5xl uppercase text-center"
@@ -552,6 +558,126 @@
         </div>
       </div>
       <!-- browse by dress style section end -->
+
+      <!-- curstomers section start -->
+
+      <div
+        class="flex flex-col gap-12 items-start border-b border-b-black/10 py-10 relative"
+      >
+        <h2
+          class="[font-family:'intefral-bold'] text-3xl md:text-5xl uppercase"
+        >
+          OUR HAPPY CUSTOMERS
+        </h2>
+
+        <!-- Scrolling container with fade effect -->
+        <div class="w-screen ml-[calc(-50vw+50%)] relative">
+          <!-- Left fade (blur) effect -->
+          <div
+            class="absolute left-0 top-0 h-[240px] w-20 backdrop-blur-[2px] z-40 pointer-events-none hidden md:block"
+          ></div>
+
+          <!-- Scrollable content -->
+          <div class="overflow-x-auto w-full scroll-smooth hide-scrollbar">
+            <div class="flex gap-8 w-max py-4">
+              <div
+                class="px-8 py-7 rounded-2xl border border-black/10 flex flex-col gap-1.5 w-[400px]"
+              >
+                <div class="w-fit">⭐⭐⭐⭐⭐</div>
+                <div class="flex gap-1 items-center w-fit">
+                  <h3 class="text-[20px] [font-family:arial] font-bold">
+                    Sarah M.
+                  </h3>
+                  ✅
+                </div>
+                <p class="text-black/60 w-fit">
+                  "I'm blown away by the quality and style of the clothes I
+                  received from Shop.co. From casual wear to elegant dresses,
+                  every piece I've bought has exceeded my expectations.”
+                </p>
+              </div>
+
+              <div
+                class="px-8 py-7 rounded-2xl border border-black/10 flex flex-col gap-1.5 w-[400px]"
+              >
+                <div class="w-fit">⭐⭐⭐⭐⭐</div>
+                <div class="flex gap-1 items-center w-fit">
+                  <h3 class="text-[20px] [font-family:arial] font-bold">
+                    Alex K.
+                  </h3>
+                  ✅
+                </div>
+                <p class="text-black/60 w-fit">
+                  "Finding clothes that align with my personal style used to be
+                  a challenge until I discovered Shop.co. The range of options
+                  they offer is truly remarkable, catering to a variety of
+                  tastes and occasions.”
+                </p>
+              </div>
+
+              <div
+                class="px-8 py-7 rounded-2xl border border-black/10 flex flex-col gap-1.5 w-[400px]"
+              >
+                <div class="w-fit">⭐⭐⭐⭐⭐</div>
+                <div class="flex gap-1 items-center w-fit">
+                  <h3 class="text-[20px] [font-family:arial] font-bold">
+                    James L.
+                  </h3>
+                  ✅
+                </div>
+                <p class="text-black/60 w-fit">
+                  "As someone who's always on the lookout for unique fashion
+                  pieces, I'm thrilled to have stumbled upon Shop.co. The
+                  selection of clothes is not only diverse but also on-point
+                  with the latest trends.”
+                </p>
+              </div>
+
+              <div
+                class="px-8 py-7 rounded-2xl border border-black/10 flex flex-col gap-1.5 w-[400px]"
+              >
+                <div class="w-fit">⭐⭐⭐⭐⭐</div>
+                <div class="flex gap-1 items-center w-fit">
+                  <h3 class="text-[20px] [font-family:arial] font-bold">
+                    Mooen
+                  </h3>
+                  ✅
+                </div>
+                <p class="text-black/60 w-fit">
+                  "As someone who's always on the lookout for unique fashion
+                  pieces, I'm thrilled to have stumbled upon Shop.co. The
+                  selection of clothes is not only diverse but also on-point
+                  with the latest trends.”
+                </p>
+              </div>
+
+              <div
+                class="px-8 py-7 rounded-2xl border border-black/10 flex flex-col gap-1.5 w-[400px]"
+              >
+                <div class="w-fit">⭐⭐⭐⭐⭐</div>
+                <div class="flex gap-1 items-center w-fit">
+                  <h3 class="text-[20px] [font-family:arial] font-bold">
+                    Sarah M.
+                  </h3>
+                  ✅
+                </div>
+                <p class="text-black/60 w-fit">
+                  "I'm blown away by the quality and style of the clothes I
+                  received from Shop.co. From casual wear to elegant dresses,
+                  every piece I've bought has exceeded my expectations.”
+                </p>
+              </div>
+
+              <!-- Add more cards here -->
+            </div>
+          </div>
+
+          <!-- Right fade (blur) effect -->
+          <div
+            class="absolute right-0 top-0 h-[240px] w-20 backdrop-blur-[2px] z-40 pointer-events-none hidden md:block"
+          ></div>
+        </div>
+      </div>
     </div>
     <!-- body end -->
   </body>
