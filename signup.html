@@ -20,9 +20,11 @@
         </h1>
         <a
           href="/signin.html"
-          class="px-7 md:px-10 py-3 uppercase bg-transparent border border-black"
+          class="group px-7 md:px-10 py-3 uppercase bg-transparent border border-black hover:bg-black"
         >
-          sign in
+          <p class="group-active:scale-95 transition-transform duration-100 group-hover:text-white">
+            sign in
+          </p>
         </a>
       </div>
       <div
@@ -77,11 +79,13 @@
             </p>
           </label>
           <button
-            class="w-full bg-black text-white uppercase px-10 md:px-[100px] py-[15px] rounded-[62px] cursor-pointer"
+            class="group w-full bg-black text-white uppercase px-10 md:px-[100px] py-[15px] rounded-[62px] cursor-pointer"
             onclick="signUp()"
             id="signup-btn"
           >
+          <p class="group-active:scale-95 transition-transform duration-100">
             create an account
+          </p>
           </button>
 
           <p class="uppercase text-[12px] text-center">or</p>

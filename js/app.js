@@ -13,18 +13,25 @@ function signUp() {
     user.email = signupEmail.value.toLowerCase();
     user.password = signupPassword.value.toLowerCase();
     let emailExist = userArr.some(check => check.email == user.email)
+    if(user.name == ""){
+        setTimeout(() => {
+            errorMsg.innerHTML = ""
+        }, 3000);
+        errorMsg.innerHTML = "Please Enter Your Name."
+        return
+    }
     if (emailExist) {
         setTimeout(() => {
             errorMsg.innerHTML = ""
         }, 3000);
-        errorMsg.innerHTML = "Oops! This email is already registered"
+        errorMsg.innerHTML = "Oops! This email is already registered."
         return
     }
     if (!user.email.includes("@")) {
         setTimeout(() => {
             errorMsg.innerHTML = ""
         }, 3000)
-        errorMsg.innerHTML = "⚠️ Please include an '@' in your email"
+        errorMsg.innerHTML = "⚠️ Please include an '@' in your email."
         return
     }
     if (user.password.length <= 8) {
