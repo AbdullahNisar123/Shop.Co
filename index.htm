@@ -20,6 +20,7 @@
       </p>
     </div>
     <!-- promo bar end -->
+
     <!-- header start -->
     <div class="md:py-[24px] py-[20px] md:px-[80px] px-4">
       <div
@@ -32,10 +33,10 @@
         </h1>
         <nav class="md:block hidden">
           <ul class="capitalize flex gap-6 items-center justify-center">
-            <li class="whitespace-nowrap">shop</li>
-            <li class="whitespace-nowrap">on sale</li>
-            <li class="whitespace-nowrap">new arrivals</li>
-            <li class="whitespace-nowrap">brands</li>
+            <li class="whitespace-nowrap cursor-pointer">shop</li>
+            <li class="whitespace-nowrap cursor-pointer">on sale</li>
+            <li class="whitespace-nowrap cursor-pointer">new arrivals</li>
+            <li class="whitespace-nowrap cursor-pointer">brands</li>
           </ul>
         </nav>
 
@@ -56,7 +57,7 @@
               class="outline-none focus:border-b focus:border-black w-full hidden md:block"
             />
           </div>
-          <div class="w-15 items-center md:flex hidden">
+          <div class="w-15 items-center md:flex hidden cursor-pointer">
             <img
               src="/assets/images/mdi-light-cart.png"
               alt="cart-icon"
@@ -72,96 +73,108 @@
           </div> -->
           <a
             href="/signin.html"
-            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16 whitespace-nowrap"
+            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
           >
-            sign in
+            <p class="group-active:scale-95 transition-transform duration-100">
+              sign in
+            </p>
           </a>
           <a
             href="/signup.html"
-            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17 whitespace-nowrap"
+            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
           >
-            sign up
+            <p class="group-active:scale-95 transition-transform duration-100">
+              sign up
+            </p>
           </a>
         </div>
       </div>
     </div>
     <!-- header end -->
+
     <!-- hero section start -->
     <div
-      class="relative inset-0 md:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-bottom-right lg:bg-right  bg-no-repeat w-full "
+      class="relative inset-0 md:bg-[url('/assets/images/hero-bg.png')] bg-cover bg-bottom-right lg:bg-right bg-no-repeat w-full"
     >
-    <div class="absolute inset-0 bg-white/50 rounded-[20px] lg:hidden"></div>
+      <div class="absolute inset-0 bg-white/50 rounded-[20px] lg:hidden"></div>
 
-    <div class="z-10 relative">
-      <div
-        class="absolute top-50 right-10 lg:block hidden transform -translate-y-1/2"
-      >
-        <img
-          src="/assets/images/bg-star.png"
-          alt="star"
-          class="w-[100px] h-auto animate-pulse"
-        />
-      </div>
-      <div class="absolute top-[490px] right-[700px] lg:block hidden">
-        <img
-          src="/assets/images/bg-star.png"
-          alt="star"
-          class="w-[50px] h-auto animate-pulse"
-        />
-      </div>
-      <div
-        class="lg:w-[60%] w-full md:p-[100px] px-4 pt-5 flex flex-col md:gap-[45px] gap-5"
-      >
-        <div class="flex gap-8 flex-col">
-          <h2
-            class="[font-family:'intefral-bold'] md:text-[64px] text-4xl md:leading-16 leading-9"
-          >
-            FIND CLOTHES THAT MATCHES YOUR STYLE
-          </h2>
-          <p class="opacity-60">
-            Browse through our diverse range of meticulously crafted garments,
-            designed to bring out your individuality and cater to your sense of
-            style.
-          </p>
-          <button
-            class="px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black md:w-fit w-full capitalize border border-black/10 hover:bg-transparent hover:text-black cursor-pointer"
-          >
-            shop now
-          </button>
+      <div class="z-10 relative">
+        <div
+          class="absolute top-50 right-10 lg:block hidden transform -translate-y-1/2"
+        >
+          <img
+            src="/assets/images/bg-star.png"
+            alt="star"
+            class="w-[100px] h-auto animate-pulse"
+          />
+        </div>
+        <div class="absolute top-[490px] right-[700px] lg:block hidden">
+          <img
+            src="/assets/images/bg-star.png"
+            alt="star"
+            class="w-[50px] h-auto animate-pulse"
+          />
         </div>
         <div
-          class="flex gap-8 gap-y-3 flex-wrap justify-center md:justify-start"
+          class="lg:w-[60%] w-full md:p-[100px] px-4 pt-5 flex flex-col md:gap-[45px] gap-5"
         >
-          <div class="flex flex-col justify-center items-start capitalize">
-            <p class="md:text-[40px] text-2xl font-bold">200+</p>
-            <p class="opacity-60 md:text-[16px] text-[12px]">
-              international brands
+          <div class="flex gap-8 flex-col">
+            <h2
+              class="[font-family:'intefral-bold'] md:text-[64px] text-4xl md:leading-16 leading-9"
+            >
+              FIND CLOTHES THAT MATCHES YOUR STYLE
+            </h2>
+            <p class="opacity-60">
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
             </p>
-          </div>
-          <div class="flex flex-col justify-center items-start capitalize">
-            <p class="md:text-[40px] text-2xl font-bold">2,000+</p>
-            <p class="opacity-60 md:text-[16px] text-[12px]">
-              High-Quality Products
-            </p>
+            <button
+              class="group px-[67px] py-[15px] text-white rounded-[62px] font-medium bg-black md:w-fit w-full capitalize border border-black/10 hover:bg-transparent hover:text-black cursor-pointer"
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100"
+              >
+                shop now
+              </p>
+            </button>
           </div>
           <div
-            class="flex flex-col justify-center items-start capitalize md:mx-0 mx-auto"
+            class="flex gap-8 gap-y-3 flex-wrap justify-center md:justify-start"
           >
-            <p class="md:text-[40px] text-2xl font-bold">30,000+</p>
-            <p class="opacity-60 md:text-[16px] text-[12px]">Happy Customers</p>
+            <div class="flex flex-col justify-center items-start capitalize">
+              <p class="md:text-[40px] text-2xl font-bold">200+</p>
+              <p class="opacity-60 md:text-[16px] text-[12px]">
+                international brands
+              </p>
+            </div>
+            <div class="flex flex-col justify-center items-start capitalize">
+              <p class="md:text-[40px] text-2xl font-bold">2,000+</p>
+              <p class="opacity-60 md:text-[16px] text-[12px]">
+                High-Quality Products
+              </p>
+            </div>
+            <div
+              class="flex flex-col justify-center items-start capitalize md:mx-0 mx-auto"
+            >
+              <p class="md:text-[40px] text-2xl font-bold">30,000+</p>
+              <p class="opacity-60 md:text-[16px] text-[12px]">
+                Happy Customers
+              </p>
+            </div>
           </div>
         </div>
+        <div class="w-full md:hidden flex items-end">
+          <img
+            src="/assets/images/hero-bg-phone.png"
+            alt="hero section img"
+            class="w-full"
+          />
+        </div>
       </div>
-      <div class="w-full md:hidden flex items-end">
-        <img
-          src="/assets/images/hero-bg-phone.png"
-          alt="hero section img"
-          class="w-full"
-        />
-      </div>
-    </div>
     </div>
     <!-- hero section end -->
+
     <!-- brand name section start -->
     <div class="bg-black w-full py-5 md:py-10 px-4 md:px-20">
       <div
@@ -243,10 +256,39 @@
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
           >
             <!-- Product 1 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -270,12 +312,40 @@
                 </div>
               </div>
             </div>
-
             <!-- Product 2 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -301,10 +371,39 @@
             </div>
 
             <!-- Product 3 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -330,10 +429,39 @@
             </div>
 
             <!-- Product 4 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -363,9 +491,11 @@
         </div>
 
         <button
-          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+          class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
         >
-          View All
+          <p class="group-active:scale-95 transition-transform duration-100">
+            View All
+          </p>
         </button>
       </div>
       <!-- new arrivals section end -->
@@ -386,10 +516,39 @@
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
           >
             <!-- Product 1 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -415,10 +574,39 @@
             </div>
 
             <!-- Product 2 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -444,10 +632,39 @@
             </div>
 
             <!-- Product 3 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -473,10 +690,39 @@
             </div>
 
             <!-- Product 4 -->
-            <div class="flex-shrink-0 w-[200px] md:w-auto">
+            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
               <div
-                class="w-[200px] h-[200px] md:w-3xs md:h-64 bg-[#F0EEED] rounded-2xl bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center"
-              ></div>
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p
+                    class="btn-text  capitalize"
+                  >
+                    Quick View
+                  </p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
               <div class="flex flex-col gap-2 mt-3">
                 <h2 class="[font-family:arial] text-base md:text-xl font-bold">
                   T-shirt with Tape Details
@@ -506,9 +752,11 @@
         </div>
 
         <button
-          class="capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+          class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
         >
-          View All
+          <p class="group-active:scale-95 transition-transform duration-100">
+            View All
+          </p>
         </button>
       </div>
       <!-- top selling section end -->
@@ -528,31 +776,62 @@
             <!-- Regular items -->
 
             <div
-              class="bg-[url('/assets/images/Casual-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] hover:bg-none hover:bg-black hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer"
+              class="bg-[url('/assets/images/Casual-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] hover:text-white hover:justify-center hover:items-center flex cursor-pointer group relative inset-0"
             >
-              <p>Casual</p>
+              <div
+                class="absolute inset-0 bg-black/80 rounded-[20px] group-hover:block hidden"
+              ></div>
+              <p
+                class="group-active:scale-90 transition-transform duration-100 z-10"
+              >
+                Casual
+              </p>
             </div>
 
             <!-- Double-width item (takes 2 columns on desktop) -->
 
             <div
-              class="bg-[url('/assets/images/FORMAL-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] col-span-2 hover:bg-none hover:bg-black hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer"
+              class="bg-[url('/assets/images/Formal-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] col-span-2 hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer group relative inset-0"
             >
-              <p>Formal</p>
+              <div
+                class="absolute inset-0 bg-black/80 rounded-[20px] group-hover:block hidden"
+              ></div>
+
+              <p
+                class="group-active:scale-90 transition-transform duration-100 z-10"
+              >
+                Formal
+              </p>
             </div>
             <!-- Double-width item (takes 2 columns on desktop) -->
 
             <div
-              class="bg-[url('/assets/images/PARTY-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] col-span-2 hover:bg-none hover:bg-black hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer"
+              class="bg-[url('/assets/images/Party-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] col-span-2 hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer group relative inset-0"
             >
-              <p>Party</p>
+              <div
+                class="absolute inset-0 bg-black/80 rounded-[20px] group-hover:block hidden"
+              ></div>
+
+              <p
+                class="group-active:scale-90 transition-transform duration-100 z-10"
+              >
+                Party
+              </p>
             </div>
             <!-- Regular items -->
 
             <div
-              class="bg-[url('/assets/images/GYM-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] hover:bg-none hover:bg-black hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer"
+              class="bg-[url('/assets/images/Gym-bg.png')] bg-cover bg-top bg-no-repeat h-[290px] md:py-6 md:px-9 py-3 px-4 [font-family:arial] font-bold text-4xl rounded-[20px] hover:text-white hover:justify-center hover:items-center flex transition cursor-pointer group relative inset-0"
             >
-              <p>Gym</p>
+              <div
+                class="absolute inset-0 bg-black/80 rounded-[20px] group-hover:block hidden"
+              ></div>
+
+              <p
+                class="group-active:scale-90 transition-transform duration-100 z-10"
+              >
+                Gym
+              </p>
             </div>
           </div>
         </div>
@@ -678,6 +957,40 @@
           ></div>
         </div>
       </div>
+
+      <!-- curstomers section end -->
+
+      <!-- newsletter section start -->
+
+      <div
+        class="w-full rounded-[20px] px-6 py-7 md:px-16 md:py-9 flex flex-col md:flex-row md:justify-between items-center bg-black gap-8"
+      >
+        <h2
+          class="md:w-[50%] [font-family:'intefral-bold'] text-[31px] md:text-[40px] text-white leading-11 w-full"
+        >
+          STAY UPTO DATE ABOUT OUR LATEST OFFERS
+        </h2>
+        <div class="md:w-[30%] w-full flex flex-col gap-3.5">
+          <div class="rounded-[62px] bg-white flex gap-3 py-3 px-4 group">
+            <p>💌</p>
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              class="text-black/70 group-hover:text-black outline-none"
+            />
+          </div>
+          <button
+            class="rounded-[62px] group hover:bg-transparent py-3 px-4 text-center bg-white border border-white/10"
+          >
+            <p
+              class="group-active:scale-95 transition-transform duration-100 w-full [font-family:arial] font-medium group-hover:text-white"
+            >
+              Subscribe to Newsletter
+            </p>
+          </button>
+        </div>
+      </div>
+      <!-- newsletter section end -->
     </div>
     <!-- body end -->
   </body>

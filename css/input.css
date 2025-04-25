@@ -13,6 +13,13 @@ body {
 }
 
 
+
+.btn:active .btn-text {
+  display: inline-block; 
+  transform: scale(0.95);
+  transition: transform 100ms ease;
+}
+
 @font-face {
   font-family: 'satoshi';
   src: url('/assets/fonts/Satoshi-Variable.ttf') format('truetype');
