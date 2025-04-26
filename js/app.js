@@ -4,9 +4,42 @@ let signupPassword = document.querySelectorAll("#signup-password")[0];
 let terms = document.querySelectorAll("#terms")[0];
 let errorMsg = document.querySelectorAll("#signup-error-msg")[0];
 let signUpBtn = document.querySelectorAll("#signup-btn")[0]
-
+let loginEmail = document.querySelectorAll("#login-email")[0]
+let loginPassword = document.querySelectorAll("#login-password")[0]
+let signinErrorMsg = document.querySelectorAll("#signin-error-msg")[0]
+let loginBtn = document.querySelectorAll("#login-btn")[0]
+let productsContainer = document.querySelectorAll("#products-container")[0]
 
 let userArr = JSON.parse(localStorage.getItem("users")) || []
+let products = [
+    {
+        id : crypto.randomUUID(),
+        name : "T-shirt with Tape Details",
+        price : 120,
+        imgUrl : "/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png"
+    },
+    {
+        id : crypto.randomUUID(),
+        name : "SKINNY FIT JEANS",
+        price : 260,
+        discoutPercent : 20,
+        imgUrl : "/assets/images/products/image-10.png"
+    },
+    {
+        id : crypto.randomUUID(),
+        name : "CHECKERED SHIRT",
+        price : 180,
+        imgUrl : "https://shop-co-js.vercel.app/assets/images/products/Checkered_shirt.png"
+    }
+    ,{
+        id : crypto.randomUUID(),
+        name : "SLEEVE STRIPED T-SHIRT",
+        price : 160,
+        discoutPercent : 30,
+        imgUrl : "https://shop-co-js.vercel.app/assets/images/products/Vertical_striped_shirt.png"
+    }
+]
+
 function signUp() {
     let user = {};
     user.name = signupUserName.value.toLowerCase();
@@ -73,10 +106,6 @@ function signUp() {
     }, 2000)
 }
 
-let loginEmail = document.querySelectorAll("#login-email")[0]
-let loginPassword = document.querySelectorAll("#login-password")[0]
-let signinErrorMsg = document.querySelectorAll("#signin-error-msg")[0]
-let loginBtn = document.querySelectorAll("#login-btn")[0]
 
 function logIn() {
 
@@ -115,4 +144,74 @@ function logIn() {
 }
 
 
+function ProductList (products){
+for(let i = 0; i<products.length; i++){
+    let productCart = makeCart(products[i])
+    productsContainer.innerHTML += productCart
+}
+}
+ProductList(products)
 
+function makeCart (Product){
+    return `
+    <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
+              <div
+                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
+              >
+                <!-- Background Image -->
+                <div
+                  class="w-full h-full bg-[#F0EEED] bg-[url('${Product.imgUrl}')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                ></div>
+
+                <div
+                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
+                ></div>
+
+                <button
+                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p class="btn-text capitalize">Quick View</p>
+                </button>
+                <button
+                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
+                >
+                  <p
+                    class="group-active:scale-95 transition-transform duration-100"
+                  >
+                    View All
+                  </p>
+                </button>
+              </div>
+
+              <div class="flex flex-col gap-2 mt-3">
+                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
+                 ${Product.name}
+                </h2>
+                <div class="flex gap-2 items-center">
+                  <div>⭐⭐⭐⭐</div>
+                  <p class="opacity-80 text-sm md:text-base">4/5</p>
+                </div>
+                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
+                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
+                    $${Product.price}
+                  </p>
+                  ${Product.discoutPercent ?`
+                    <p class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40">
+                    $ ${Product.price}
+                  </p>
+                  `: ""
+                  }
+                  ${Product.discoutPercent ? `
+                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
+                    <p class="text-[#FF3333] text-sm">-${Product.discoutPercent}%</p>
+                  </div>
+                  `: ""
+                }
+                </div>
+              </div>
+            </div>
+    `
+}
+
+
+console.log("Trying to load:", products[2].imgUrl);
