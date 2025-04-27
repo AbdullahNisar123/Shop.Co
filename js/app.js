@@ -23,7 +23,7 @@ let products = [
         name : "SKINNY FIT JEANS",
         price : 260,
         discoutPercent : 20,
-        imgUrl : "/assets/images/products/image-10.png"
+        imgUrl : "https://shop-co-js.vercel.app/assets/images/products/CHECKERED_SHIRT.png"
     },
     {
         id : crypto.randomUUID(),
@@ -214,4 +214,4 @@ function makeCart (Product){
 }
 
 
-console.log("Trying to load:", products[2].imgUrl);
+console.log("Trying to load:", products[1].imgUrl);
