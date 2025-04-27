@@ -24,7 +24,7 @@
     <!-- header start -->
     <div class="md:py-[24px] py-[20px] md:px-[80px] px-4">
       <div
-        class="flex md:gap-[40px] items-center md:justify-center justify-between"
+        class="flex md:gap-[40px] items-center justify-between"
       >
         <h1
           class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
@@ -57,36 +57,38 @@
               class="outline-none focus:border-b focus:border-black w-full hidden md:block"
             />
           </div>
-          <div class="w-15 items-center md:flex hidden cursor-pointer">
+          <div class="w-10 items-center md:flex hidden cursor-pointer">
             <img
               src="/assets/images/mdi-light-cart.png"
               alt="cart-icon"
               width="100"
             />
           </div>
-          <!-- <div class="w-7 h-7 flex items-center">
-            <img
-              src="/assets/images/user.png"
-              alt="user-icon"
-              width="100"
-            />
-          </div> -->
-          <a
-            href="/signin.html"
-            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
-          >
-            <p class="group-active:scale-95 transition-transform duration-100">
-              sign in
-            </p>
-          </a>
-          <a
-            href="/signup.html"
-            class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
-          >
-            <p class="group-active:scale-95 transition-transform duration-100">
-              sign up
-            </p>
-          </a>
+          <div class="w-10 items-center md:flex hidden cursor-pointer">
+            <img src="/assets/images/user.png" alt="user-icon" width="100" />
+          </div>
+          <div id="auth-btns" class="flex md:gap-3.5 gap-3 items-center">
+            <a
+              href="/signin.html"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center"
+              >
+                sign in
+              </p>
+            </a>
+            <a
+              href="/signup.html"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center"
+              >
+                sign up
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -255,224 +257,7 @@
           <div
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
             id="products-container"
-          >
-            <!-- Product 1 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Product 2 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/image-10.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Add more products as needed -->
-          </div>
+          ></div>
         </div>
 
         <button
@@ -499,225 +284,8 @@
         <div class="w-full overflow-x-auto pb-4 scroll-smooth">
           <div
             class="flex gap-4 md:gap-2.5 px-4 md:px-0 w-max min-w-full justify-center"
-          >
-            <!-- Product 1 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
-              <div
-                class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
-              >
-                <!-- Background Image -->
-                <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('/assets/images/products/T-SHIRT_WITH_TAPE_DETAILS.png')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
-
-                <div
-                  class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
-                ></div>
-
-                <button
-                  class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
-                >
-                  <p class="btn-text capitalize">Quick View</p>
-                </button>
-                <button
-                  class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
-                >
-                  <p
-                    class="group-active:scale-95 transition-transform duration-100"
-                  >
-                    View All
-                  </p>
-                </button>
-              </div>
-
-              <div class="flex flex-col gap-2 mt-3">
-                <h2 class="[font-family:arial] text-base md:text-xl font-bold">
-                  T-shirt with Tape Details
-                </h2>
-                <div class="flex gap-2 items-center">
-                  <div>⭐⭐⭐⭐</div>
-                  <p class="opacity-80 text-sm md:text-base">4/5</p>
-                </div>
-                <div class="flex gap-1.5 md:gap-2.5 items-center flex-wrap">
-                  <p class="[font-family:arial] text-lg md:text-2xl font-bold">
-                    $120
-                  </p>
-                  <p
-                    class="[font-family:arial] text-lg md:text-2xl font-bold line-through opacity-40"
-                  >
-                    $120
-                  </p>
-                  <div class="bg-red-700/10 px-2 md:px-3 py-1 rounded-full">
-                    <p class="text-[#FF3333] text-sm">-20%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Add more products as needed -->
-          </div>
+            id="products-container"
+          ></div>
         </div>
 
         <button
@@ -932,12 +500,11 @@
     <!-- body end -->
 
     <footer class="pb-5 md:px-24 px-5 bg-[#F0F0F0]">
-
-
-      
       <!-- newsletter section start -->
 
-      <div class="w-full rounded-[20px] px-6 py-7 md:px-16 md:py-9 flex flex-col md:flex-row md:justify-between items-center bg-black gap-8 relative bottom-15">
+      <div
+        class="w-full rounded-[20px] px-6 py-7 md:px-16 md:py-9 flex flex-col md:flex-row md:justify-between items-center bg-black gap-8 relative bottom-15"
+      >
         <h2
           class="md:w-[50%] [font-family:'intefral-bold'] text-[31px] md:text-[40px] text-white leading-11 w-full"
         >
@@ -964,10 +531,6 @@
         </div>
       </div>
       <!-- newsletter section end -->
-
-
-
-
 
       <!-- footer section start -->
 
@@ -1096,10 +659,30 @@
           </div>
         </div>
       </div>
-    <!-- footer section ent -->
-
-
+      <!-- footer section ent -->
     </footer>
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let authBtns = document.querySelectorAll("#auth-btns")[0];
+        let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+        if (isLoggedIn) {
+          authBtns.style.display = "none";
+          authBtns.parentElement.innerHTML += `
+           <button
+              onclick = "logout(this)"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px]  whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white "
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center flex items-center"
+              >
+                logout
+              </p>
+            </button>
+            `
+        }
+      });
+    </script>
   </body>
 </html>
