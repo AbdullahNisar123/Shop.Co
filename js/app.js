@@ -211,8 +211,9 @@ function makeCart(Product) {
               >
                 <!-- Background Image -->
                 <div
-                  class="w-full h-full bg-[#F0EEED] bg-[url('${Product.imgUrl}')] bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
-                ></div>
+                  class="w-full h-full bg-[#F0EEED]  bg-contain bg-center transition-all duration-300 group-hover:brightness-75"
+                  style="background-image: url('${Product.imgUrl}')"
+                  ></div>
 
                 <div
                   class="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/40"
