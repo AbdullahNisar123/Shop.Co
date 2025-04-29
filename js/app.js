@@ -193,7 +193,7 @@ function logout(Ele) {
 }
 
 
-
+// to reder the products on DOM
 function ProductList(products) {
   for (let i = 0; i < productsContainer.length; i++) {
     for (let j = 0; j < products.length; j++) {
@@ -204,8 +204,7 @@ function ProductList(products) {
 }
 ProductList(ProductsArr)
 
-
-
+// UI of products cart
 function makeProductCart(Product) {
 
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -277,7 +276,90 @@ function makeProductCart(Product) {
 }
 
 
+// to reder the cart products on DOM
+function cartProductList(cartProducts) {
+  if(!cartProducts.length > 0){
+    cartContainer.innerHTML = `
+    <div class="flex justify-center flex-col gap-5 items-center py-5">
+              <div class="w-65">
+                <img src="/assets/images/empty-cart.png" alt="empty cart">
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <h2 class="[font-family:arial] font-bold text-3xl">
+                  Your cart is empty
+                </h2>
+                <p class="text-[20px] text-black/60 text-center">
+                  Looks like you have not added anything to your cart. Go ahead
+                  & explore top categories
+                </p>
+              </div>
+            </div>
+    `
+    return
+  }
+  for (let i = 0; i < cartProducts.length; i++) {
+    cartContainer.innerHTML += makeCartProduct(cartProducts[i])
+  }
+}
+cartProductList(CartArr)
 
+
+// UI of cart products 
+function makeCartProduct(cartProduct) {
+  const { imgUrl, name, price, quantity } = cartProduct
+  return `
+            <div class="flex gap-3 md:py-6 py-0 border-t border-black/10 w-full ">
+              <div
+                class="w-[124px] h-[124px] bg-[#F0EEED] bg-center bg-contain bg-no-repeat rounded-[8px]"
+                style="
+                  background-image: url('${imgUrl}');
+                "
+              ></div>
+
+              <div class="flex flex-col md:gap-2 w-full">
+                <div class="flex justify-between w-full sm:gap">
+                  <div class="">
+                    <h2
+                      class="[font-family:arial] font-bold md:text-[20px] text-[16px]"
+                    >
+                      ${name}
+                    </h2>
+                    <p class="capitalize text-[14px]">
+                      size: <span class="text-black/60">large</span>
+                    </p>
+                    <p class="capitalize text-[14px]">
+                      color: <span class="text-black/60">white</span>
+                    </p>
+                  </div>
+                  <div class="">
+                    <img
+                      src="/assets/images/delete-icon.png"
+                      alt="delete icon"
+                    />
+                  </div>
+                </div>
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="[font-family:arial] font-bold md:text-[24px] text-[20px]"
+                  >
+                    $${price * quantity}
+                  </h3>
+
+                  <div
+                    class="bg-[#F0F0F0] px-5 py-3 rounded-[60px] [font-family:arial] font-bold text-[20px] flex justify-between items-center w-[124px]"
+                  >
+                    <p class="h-fit cursor-pointer">-</p>
+                    <p class="text-[14px] h-fit cursor-pointer">${quantity}</p>
+                    <p class="h-fit cursor-pointer" >+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  `
+}
+
+
+// save cart summary like (total,fee,discount,etc..) in localstorage
 function cartSummary(CartArr) {
   let total = 0
   let discountPercent = 0;
@@ -290,14 +372,11 @@ function cartSummary(CartArr) {
     }
   }
   localStorage.setItem("cartSummary",JSON.stringify({total,discountPercent,discountedPrice,fee:15}))
-  console.log(total, discountPercent,discountedPrice)
-  console.log((total * (1 - discountPercent / 100)) - total)
 
 }
 
-
+// UI of cart products summary
 function makeSummary(){
-  console.log(!CartArr.length > 0)
   if(!CartArr.length > 0){
     cartSummaryContainer.innerHTML = `
     <h3 class="capitalize [font-family:arial] font-bold text-[24px]">
@@ -462,8 +541,9 @@ function makeSummary(){
             </div>
   `
 }
+makeSummary()
 
-
+// add to cart fuction store prodcuts in cart array
 function addToCart(id) {
   const product = ProductsArr.find(item => item.id === id);
   const alreadyInCart = CartArr.some(item => item.id == id)
@@ -496,87 +576,6 @@ function addToCart(id) {
 }
 
 
-
-function cartProductList(cartProducts) {
-  if(!cartProducts.length > 0){
-    cartContainer.innerHTML = `
-    <div class="flex justify-center flex-col gap-5 items-center py-5">
-              <div class="w-65">
-                <img src="/assets/images/empty-cart.png" alt="empty cart">
-              </div>
-              <div class="flex flex-col items-center gap-3">
-                <h2 class="[font-family:arial] font-bold text-3xl">
-                  Your cart is empty
-                </h2>
-                <p class="text-[20px] text-black/60 text-center">
-                  Looks like you have not added anything to your cart. Go ahead
-                  & explore top categories
-                </p>
-              </div>
-            </div>
-    `
-    return
-  }
-  for (let i = 0; i < cartProducts.length; i++) {
-    cartContainer.innerHTML += makeCartProduct(cartProducts[i])
-  }
-}
-cartProductList(CartArr)
-makeSummary()
-
-
-function makeCartProduct(cartProduct) {
-  const { imgUrl, name, price, quantity } = cartProduct
-  return `
-            <div class="flex gap-3 md:py-6 py-0 border-t border-black/10 w-full ">
-              <div
-                class="w-[124px] h-[124px] bg-[#F0EEED] bg-center bg-contain bg-no-repeat rounded-[8px]"
-                style="
-                  background-image: url('${imgUrl}');
-                "
-              ></div>
-
-              <div class="flex flex-col md:gap-2 w-full">
-                <div class="flex justify-between w-full sm:gap">
-                  <div class="">
-                    <h2
-                      class="[font-family:arial] font-bold md:text-[20px] text-[16px]"
-                    >
-                      ${name}
-                    </h2>
-                    <p class="capitalize text-[14px]">
-                      size: <span class="text-black/60">large</span>
-                    </p>
-                    <p class="capitalize text-[14px]">
-                      color: <span class="text-black/60">white</span>
-                    </p>
-                  </div>
-                  <div class="">
-                    <img
-                      src="/assets/images/delete-icon.png"
-                      alt="delete icon"
-                    />
-                  </div>
-                </div>
-                <div class="flex justify-between items-center">
-                  <h3
-                    class="[font-family:arial] font-bold md:text-[24px] text-[20px]"
-                  >
-                    $${price * quantity}
-                  </h3>
-
-                  <div
-                    class="bg-[#F0F0F0] px-5 py-3 rounded-[60px] [font-family:arial] font-bold text-[20px] flex justify-between items-center w-[124px]"
-                  >
-                    <p class="h-fit cursor-pointer">-</p>
-                    <p class="text-[14px] h-fit cursor-pointer">${quantity}</p>
-                    <p class="h-fit cursor-pointer" >+</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-  `
-}
 
 
 
