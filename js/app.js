@@ -47,23 +47,32 @@ let products = [
 ]
 // products for localStorage end
 
+
+
 // set products to localstorage
 localStorage.setItem("products", JSON.stringify(products))
+
 
 
 // products array from localstorage
 let ProductsArr = JSON.parse(localStorage.getItem("products"))
 
 
+
 // users array from localstorage
 let userArr = JSON.parse(localStorage.getItem("users")) || []
+
 
 
 // cart array from localstorage 
 let CartArr = JSON.parse(localStorage.getItem("CartArray")) || []
 
+
+
 // cart summary from localstorage 
 let Summary = JSON.parse(localStorage.getItem("cartSummary")) || {}
+
+
 
 // signup function
 function signUp() {
@@ -193,6 +202,7 @@ function logout(Ele) {
 }
 
 
+
 // to reder the products on DOM
 function ProductList(products) {
   for (let i = 0; i < productsContainer.length; i++) {
@@ -203,6 +213,9 @@ function ProductList(products) {
   }
 }
 ProductList(ProductsArr)
+
+
+
 
 // UI of products cart
 function makeProductCart(Product) {
@@ -278,6 +291,7 @@ function makeProductCart(Product) {
 
 // to reder the cart products on DOM
 function cartProductList(cartProducts) {
+  
   if(!cartProducts.length > 0){
     cartContainer.innerHTML = `
     <div class="flex justify-center flex-col gap-5 items-center py-5">
@@ -297,6 +311,7 @@ function cartProductList(cartProducts) {
     `
     return
   }
+  cartContainer.innerHTML = ""
   for (let i = 0; i < cartProducts.length; i++) {
     cartContainer.innerHTML += makeCartProduct(cartProducts[i])
   }
@@ -306,7 +321,7 @@ cartProductList(CartArr)
 
 // UI of cart products 
 function makeCartProduct(cartProduct) {
-  const { imgUrl, name, price, quantity } = cartProduct
+  const { imgUrl, name, price, quantity, id } = cartProduct
   return `
             <div class="flex gap-3 md:py-6 py-0 border-t border-black/10 w-full ">
               <div
@@ -331,7 +346,7 @@ function makeCartProduct(cartProduct) {
                       color: <span class="text-black/60">white</span>
                     </p>
                   </div>
-                  <div class="">
+                  <div class="cursor-pointer" onclick="removeFromCart('${id}')">
                     <img
                       src="/assets/images/delete-icon.png"
                       alt="delete icon"
@@ -371,9 +386,19 @@ function cartSummary(CartArr) {
       discountedPrice += Math.abs((total * (1 - discountPercent / 100)) - total)
     }
   }
-  localStorage.setItem("cartSummary",JSON.stringify({total,discountPercent,discountedPrice,fee:15}))
+  const summary = {
+    total: total,
+    discountPercent: discountPercent,
+    discountedPrice: discountedPrice,
+    fee: 15   // Fixed delivery fee
+  };
+
+  localStorage.setItem("cartSummary", JSON.stringify(summary));
+  return summary;
 
 }
+
+
 
 // UI of cart products summary
 function makeSummary(){
@@ -507,7 +532,7 @@ function makeSummary(){
                   Total
                 </p>
                 <p class="[font-family:arial] text-black font-bold text-[24px]">
-                  $${(Summary.total-Summary.discountedPrice)+Summary.fee}
+                  $${(Summary.total+Summary.fee)-Summary.discountedPrice}
                 </p>
               </div>
             </div>
@@ -543,6 +568,8 @@ function makeSummary(){
 }
 makeSummary()
 
+
+
 // add to cart fuction store prodcuts in cart array
 function addToCart(id) {
   const product = ProductsArr.find(item => item.id === id);
@@ -570,12 +597,19 @@ function addToCart(id) {
 
 
   localStorage.setItem("CartArray", JSON.stringify(CartArr))
-  cartSummary(CartArr)
-
-
+  Summary = cartSummary(CartArr);
+  makeSummary()
 }
 
 
 
+function removeFromCart(id){
+  CartArr = CartArr.filter(item => item.id !== id)
+  console.log(CartArr)
+  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  cartProductList(CartArr)
+  Summary = cartSummary(CartArr);
+  makeSummary()
 
+}
 
