@@ -363,9 +363,9 @@ function makeCartProduct(cartProduct) {
                   <div
                     class="bg-[#F0F0F0] px-5 py-3 rounded-[60px] [font-family:arial] font-bold text-[20px] flex justify-between items-center w-[124px]"
                   >
-                    <p class="h-fit cursor-pointer">-</p>
+                    <p class="h-fit cursor-pointer" onclick="qantityDecrement('${id}')">-</p>
                     <p class="text-[14px] h-fit cursor-pointer">${quantity}</p>
-                    <p class="h-fit cursor-pointer" >+</p>
+                    <p class="h-fit cursor-pointer" onclick="qantityIncrement('${id}')">+</p>
                   </div>
                 </div>
               </div>
@@ -613,3 +613,28 @@ function removeFromCart(id){
 
 }
 
+
+// to increment qantity of cart product and update ui
+function qantityIncrement  (id){
+  CartArr.map(item => item.id == id 
+    ? { ...item, quantity: item.quantity++}
+    : item
+  )
+  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  cartProductList(CartArr)
+  Summary = cartSummary(CartArr);
+  makeSummary()
+}
+
+
+// to decrement qantity of cart product and update ui
+function qantityDecrement  (id){
+  CartArr.map(item => item.id == id && item.quantity > 1
+    ? { ...item, quantity: item.quantity--}
+    : item
+  )
+  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  cartProductList(CartArr)
+  Summary = cartSummary(CartArr);
+  makeSummary()
+}
