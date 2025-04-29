@@ -602,7 +602,7 @@ function addToCart(id) {
 }
 
 
-
+// remove product from cart aand update cart product list also cart summary
 function removeFromCart(id){
   CartArr = CartArr.filter(item => item.id !== id)
   console.log(CartArr)
