@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOP.CO | Cart</title>
+    <link rel="stylesheet" href="/css/output.css" />
+    <script src="/js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- promo bar start -->
+    <div class="bg-black text-center w-ful py-1">
+      <p class="text-white font-light md:text-[14px] text-[12px]">
+        Sign up and get 20% off to your first order.
+        <a
+          href="/signup.html"
+          class="hover:underline md:text-[16px] text-[14px]"
+          >Sign Up Now</a
+        >
+      </p>
+    </div>
+    <!-- promo bar end -->
+
+    <!-- header start -->
+    <div class="md:py-[24px] py-[20px] md:px-[80px] px-4">
+      <div class="flex md:gap-[40px] items-center justify-between">
+        <h1
+          class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
+        >
+          <a href="/index.htm"> shop.co </a>
+        </h1>
+        <nav class="md:block hidden">
+          <ul class="capitalize flex gap-6 items-center justify-center">
+            <li class="whitespace-nowrap cursor-pointer">shop</li>
+            <li class="whitespace-nowrap cursor-pointer">on sale</li>
+            <li class="whitespace-nowrap cursor-pointer">new arrivals</li>
+            <li class="whitespace-nowrap cursor-pointer">brands</li>
+          </ul>
+        </nav>
+
+        <div class="flex md:gap-3.5 gap-3 items-center md:w-[40%]">
+          <div
+            class="flex md:px-3.5 md:py-3 md:gap-3 md:bg-[#F0F0F0] rounded-[62px] md:w-[100%] items-center"
+          >
+            <div class="w-6">
+              <img
+                src="/assets/images/search.png"
+                alt="search-icon"
+                width="200"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Search for products..."
+              class="outline-none focus:border-b focus:border-black w-full hidden md:block"
+            />
+          </div>
+          <a
+            href="/cart.html"
+            class="w-10 items-center flex cursor-pointer"
+            id="user-icon"
+          >
+            <img
+              src="/assets/images/mdi-light-cart.png"
+              alt="cart-icon"
+              width="100"
+            />
+          </a>
+          <!-- <div class="w-10 items-center hidden  cursor-pointer">
+              <img src="/assets/images/user.png" alt="user-icon" width="100" />
+            </div> -->
+          <div id="auth-btns" class="flex md:gap-3.5 gap-3 items-center">
+            <a
+              href="/signin.html"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-16 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center"
+              >
+                sign in
+              </p>
+            </a>
+            <a
+              href="/signup.html"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px] md:w-20 w-17 whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white"
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center"
+              >
+                sign up
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+
+    <div class="md:px-24 px-4">
+      <div class="flex flex-col gap-6 pt-6 pb-30 border-t border-black/10">
+        <p class="text-black/60">Home > <span class="text-black">Cart</span></p>
+        <h2 class="[font-family:'intefral-bold'] md:text-[40px] text-3xl">
+          Your cart
+        </h2>
+        <div class="flex gap-5 md:flex-row flex-col">
+          <!-- cart products details -->
+          <div
+            class="flex flex-col rounded-[20px] bg-transparent border border-black/10 md:px-6 md:py-0 p-3.5 md:w-[60%] w-full h-fit"
+            id="cart-container"
+          >
+            
+          </div>
+
+          <!-- cart summary  -->
+          <div
+            class="md:w-[40%] rounded-[20px] bg-transparent border border-black/10 md:px-6 px-5 py-5 flex flex-col md:gap-6 gap-4 h-fit"
+            id="cart-summary"
+          >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pb-5 md:px-24 px-5 bg-[#F0F0F0]">
+      <!-- newsletter section start -->
+
+      <div
+        class="w-full rounded-[20px] px-6 py-7 md:px-16 md:py-9 flex flex-col md:flex-row md:justify-between items-center bg-black gap-8 relative bottom-15"
+      >
+        <h2
+          class="md:w-[50%] [font-family:'intefral-bold'] text-[31px] md:text-[40px] text-white leading-11 w-full"
+        >
+          STAY UPTO DATE ABOUT OUR LATEST OFFERS
+        </h2>
+        <div class="md:w-[30%] w-full flex flex-col gap-3.5">
+          <div class="rounded-[62px] bg-white flex gap-3 py-3 px-4 group">
+            <p>💌</p>
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              class="text-black/70 group-hover:text-black outline-none"
+            />
+          </div>
+          <button
+            class="rounded-[62px] group hover:bg-transparent py-3 px-4 text-center bg-white border border-white/10"
+          >
+            <p
+              class="group-active:scale-95 transition-transform duration-100 w-full font-medium group-hover:text-white"
+            >
+              Subscribe to Newsletter
+            </p>
+          </button>
+        </div>
+      </div>
+      <!-- newsletter section end -->
+
+      <!-- footer section start -->
+
+      <div class="flex flex-col gap-[50px]">
+        <div class="gap-8 w-full grid grid-cols-2 md:grid-cols-5">
+          <div class="flex flex-col gap-[35px] w-full col-span-2 md:col-span-1">
+            <div class="flex flex-col gap-[25px] justify-between">
+              <h1
+                class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
+              >
+                <a href="/index.htm"> shop.co </a>
+              </h1>
+              <p class="black/60 text-[14px] leading-5">
+                We have clothes that suits your style and which you’re proud to
+                wear. From women to men.
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <div
+                class="group hover:bg-black border border-black/20 w-10 h-10 bg-white rounded-full flex justify-center items-center p-2 transition duration-300"
+              >
+                <span
+                  class="iconify text-black text-4xl h-fit group-hover:text-white"
+                  data-icon="mdi:twitter"
+                ></span>
+              </div>
+              <div
+                class="group hover:bg-black border border-black/20 w-10 h-10 bg-white rounded-full flex justify-center items-center p-2 transition duration-300"
+              >
+                <span
+                  class="iconify text-black text-4xl h-fit group-hover:text-white"
+                  data-icon="flowbite:facebook-solid"
+                ></span>
+              </div>
+              <div
+                class="group hover:bg-black border border-black/20 w-10 h-10 bg-white rounded-full flex justify-center items-center p-2 transition duration-300"
+              >
+                <span
+                  class="iconify text-black text-4xl h-fit group-hover:text-white"
+                  data-icon="hugeicons:instagram"
+                ></span>
+              </div>
+              <div
+                class="group hover:bg-black border border-black/20 w-10 h-10 bg-white rounded-full flex justify-center items-center p-2 transition duration-300"
+              >
+                <span
+                  class="iconify text-black text-4xl h-fit group-hover:text-white"
+                  data-icon="mdi:github"
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-6 w-fit">
+            <p class="[font-family:arial] font-medium uppercase">company</p>
+            <ul class="text-black/60 leading-10 capitalize">
+              <li class="hover:underline cursor-pointer">about</li>
+              <li class="hover:underline cursor-pointer">features</li>
+              <li class="hover:underline cursor-pointer">works</li>
+              <li class="hover:underline cursor-pointer">career</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-6 w-fit">
+            <p class="[font-family:arial] font-medium uppercase">help</p>
+            <ul class="text-black/60 leading-10 capitalize">
+              <li class="hover:underline cursor-pointer">customer support</li>
+              <li class="hover:underline cursor-pointer">delivery details</li>
+              <li class="hover:underline cursor-pointer">terms & conditions</li>
+              <li class="hover:underline cursor-pointer">privacy policy</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-6 w-fit">
+            <p class="[font-family:arial] font-medium uppercase">FAq</p>
+            <ul class="text-black/60 leading-10 capitalize">
+              <li class="hover:underline cursor-pointer">account</li>
+              <li class="hover:underline cursor-pointer">manage deliveries</li>
+              <li class="hover:underline cursor-pointer">orders</li>
+              <li class="hover:underline cursor-pointer">payments</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-6 w-fit">
+            <p class="[font-family:arial] font-medium uppercase">resources</p>
+            <ul class="text-black/60 leading-10 capitalize">
+              <li class="hover:underline cursor-pointer">free Ebooks</li>
+              <li class="hover:underline cursor-pointer">
+                development tutorial
+              </li>
+              <li class="hover:underline cursor-pointer">how to - blog</li>
+              <li class="hover:underline cursor-pointer">youtube playlist</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="py-6 flex md:flex-row flex-col w-full gap-3 md:justify-between border-t border-black/10"
+        >
+          <p class="capitalize text-black/60 text-center md:text-start">
+            shop.co © 2000-2021, All rights reserved
+          </p>
+          <div class="flex gap-3 justify-center">
+            <div
+              class="rounded-[5px] bg-white px-[10px] py-[7px] flex items-center justify-center cursor-pointer"
+            >
+              <img src="/assets/images/Visa.png" alt="visa" />
+            </div>
+            <div
+              class="rounded-[5px] bg-white px-[10px] py-[7px] flex items-center justify-center cursor-pointer"
+            >
+              <img src="/assets/images/Mastercard.png" alt="Mastercard" />
+            </div>
+
+            <div
+              class="rounded-[5px] bg-white px-[10px] py-[7px] flex items-center justify-center cursor-pointer"
+            >
+              <img src="/assets/images/Paypal.png" alt="paypal" />
+            </div>
+            <div
+              class="rounded-[5px] bg-white px-[10px] py-[7px] flex items-center justify-center cursor-pointer"
+            >
+              <img src="/assets/images/apple Pay.png" alt="apple pay" />
+            </div>
+            <div
+              class="rounded-[5px] bg-white px-[10px] py-[7px] flex items-center justify-center cursor-pointer"
+            >
+              <img src="/assets/images/G Pay.png" alt="g pay" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer section ent -->
+    </footer>
+
+    <!-- script for icons -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+    <!-- script for remove signin and signup btn when login -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let authBtns = document.querySelectorAll("#auth-btns")[0];
+        let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+        if (isLoggedIn) {
+          authBtns.style.display = "none";
+          authBtns.parentElement.innerHTML += `
+           <button
+              onclick = "logout(this)"
+              class="md:px-3 md:py-2 px-2 py-1 uppercase bg-transparent border border-black text-[12px]  whitespace-nowrap cursor-pointer group hover:bg-black hover:text-white "
+            >
+              <p
+                class="group-active:scale-95 transition-transform duration-100 text-center flex items-center"
+              >
+                logout
+              </p>
+            </button>
+            `;
+        }
+      });
+    </script>
+  </body>
+</html>

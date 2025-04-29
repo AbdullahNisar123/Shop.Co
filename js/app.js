@@ -9,9 +9,10 @@ let loginPassword = document.querySelectorAll("#login-password")[0]
 let signinErrorMsg = document.querySelectorAll("#signin-error-msg")[0]
 let loginBtn = document.querySelectorAll("#login-btn")[0]
 let productsContainer = document.querySelectorAll("#products-container")
+let cartContainer = document.querySelectorAll("#cart-container")[0]
+let cartSummaryContainer = document.querySelectorAll("#cart-summary")[0]
 
 
-let userArr = JSON.parse(localStorage.getItem("users")) || []
 
 
 
@@ -50,16 +51,19 @@ let products = [
 localStorage.setItem("products", JSON.stringify(products))
 
 
-
-
-
 // products array from localstorage
 let ProductsArr = JSON.parse(localStorage.getItem("products"))
 
 
+// users array from localstorage
+let userArr = JSON.parse(localStorage.getItem("users")) || []
 
 
+// cart array from localstorage 
+let CartArr = JSON.parse(localStorage.getItem("CartArray")) || []
 
+// cart summary from localstorage 
+let Summary = JSON.parse(localStorage.getItem("cartSummary")) || {}
 
 // signup function
 function signUp() {
@@ -130,10 +134,6 @@ function signUp() {
 
 
 
-
-
-
-
 // login function
 function logIn() {
 
@@ -174,20 +174,21 @@ function logIn() {
 }
 
 
+
 // logout function
-function logout(Ele){
+function logout(Ele) {
   const confirmLogout = confirm("Are you sure you want to log out?");
 
-  if(confirmLogout){
-  Ele.children[0].innerHTML = `
+  if (confirmLogout) {
+    Ele.children[0].innerHTML = `
     <span class="spinner"></span> 
     logOut
   `
-  setTimeout(() => {
-    localStorage.removeItem("isLoggedIn"),
-    location.reload();
-  }, 2000)
- 
+    setTimeout(() => {
+      localStorage.removeItem("isLoggedIn"),
+        location.reload();
+    }, 2000)
+
   }
 }
 
@@ -196,16 +197,22 @@ function logout(Ele){
 function ProductList(products) {
   for (let i = 0; i < productsContainer.length; i++) {
     for (let j = 0; j < products.length; j++) {
-      let productCart = makeCart(products[j])
+      let productCart = makeProductCart(products[j])
       productsContainer[i].innerHTML += productCart
     }
   }
 }
 ProductList(ProductsArr)
 
-function makeCart(Product) {
+
+
+function makeProductCart(Product) {
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+
   return `
-    <div class="group relative flex-shrink-0 w-[200px] md:w-auto">
+    <div class="group relative flex-shrink-0 w-[200px] md:w-auto ${!isLoggedIn ? 'filter blur-sm' : ''}">
               <div
                 class="relative w-[200px] h-[200px] md:w-3xs md:h-64 rounded-2xl overflow-hidden"
               >
@@ -220,9 +227,10 @@ function makeCart(Product) {
                 ></div>
 
                 <button
+                onclick="addToCart('${Product.id}')"
                   class="btn absolute inset-0 m-auto w-fit h-fit px-12 md:px-10 py-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
                 >
-                  <p class="btn-text capitalize">Quick View</p>
+                  <p class="btn-text uppercase" >Add to cart</p>
                 </button>
                 <button
                   class="group capitalize px-12 md:px-20 py-3 rounded-2xl md:rounded-3xl text-sm md:text-base border border-black/10 hover:bg-black hover:text-white transition w-full md:w-fit cursor-pointer"
@@ -267,4 +275,308 @@ function makeCart(Product) {
             </div>
     `
 }
+
+
+
+function cartSummary(CartArr) {
+  let total = 0
+  let discountPercent = 0;
+  let discountedPrice = 0 
+  for (let i = 0; i < CartArr.length; i++) {
+    total += CartArr[i].price * CartArr[i].quantity
+    if (CartArr[i].discountPercent !== undefined) {
+      discountPercent += CartArr[i].discountPercent
+      discountedPrice += Math.abs((total * (1 - discountPercent / 100)) - total)
+    }
+  }
+  localStorage.setItem("cartSummary",JSON.stringify({total,discountPercent,discountedPrice,fee:15}))
+  console.log(total, discountPercent,discountedPrice)
+  console.log((total * (1 - discountPercent / 100)) - total)
+
+}
+
+
+function makeSummary(){
+  console.log(!CartArr.length > 0)
+  if(!CartArr.length > 0){
+    cartSummaryContainer.innerHTML = `
+    <h3 class="capitalize [font-family:arial] font-bold text-[24px]">
+              order summary
+            </h3>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-5 pb-5 border-b border-black/10">
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    subtotal
+                  </p>
+                  <p
+                    class="[font-family:arial] text-black font-bold text-[20px]"
+                  >
+                    $0
+                  </p>
+                </div>
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    Discount (0%)
+                  </p>
+                  <p
+                    class="[font-family:arial] text-[#FF3333] font-bold text-[20px]"
+                  >
+                    $0
+                  </p>
+                </div>
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    Delivery Fee
+                  </p>
+                  <p
+                    class="[font-family:arial] text-black font-bold text-[20px]"
+                  >
+                    $0
+                  </p>
+                </div>
+              </div>
+              <div class="flex justify-between w-full capitalize">
+                <p class="[font-family:arial] text-black/60 text-[20px]">
+                  Total
+                </p>
+                <p class="[font-family:arial] text-black font-bold text-[24px]">
+                  $0
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div
+                class="px-4 py-3 bg-[#F0F0F0] flex gap-3 rounded-[60px] items-center w-full"
+              >
+                <img
+                  src="/assets/images/promo-code.png"
+                  alt="promo-code"
+                  class="opacity-60"
+                />
+                <input
+                  type="text"
+                  placeholder="Add promo code"
+                  class="text-black/60 outline-none"
+                />
+              </div>
+              <div
+                class="group cursor-pointer w-fit rounded-[60px] bg-black px-8 py-3 capitalize text-white"
+              >
+                <p
+                  class="text-white group-active:scale-85 transition-transform duration-100"
+                >
+                  apply
+                </p>
+              </div>
+            </div>
+            <div
+              class="group cursor-pointer w-full py-5 bg-black rounded-[60px] flex justify-center items-center gap-3"
+            >
+              <p
+                class="text-white group-active:scale-85 transition-transform duration-100"
+              >
+                Go to Checkout
+              </p>
+              <span
+                class="iconify text-white text-[14px] h-fit"
+                data-icon="formkit:arrowright"
+              ></span>
+            </div>
+    `
+    return;
+  }
+  cartSummaryContainer.innerHTML = `
+  <h3 class="capitalize [font-family:arial] font-bold text-[24px]">
+              order summary
+            </h3>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-5 pb-5 border-b border-black/10">
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    subtotal
+                  </p>
+                  <p
+                    class="[font-family:arial] text-black font-bold text-[20px]"
+                  >
+                    $${Summary.total}
+                  </p>
+                </div>
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    Discount (-${Summary.discountPercent}%)
+                  </p>
+                  <p
+                    class="[font-family:arial] text-[#FF3333] font-bold text-[20px]"
+                  >
+                    -$${Summary.discountedPrice}
+                  </p>
+                </div>
+                <div class="flex justify-between w-full capitalize">
+                  <p class="[font-family:arial] text-black/60 text-[20px]">
+                    Delivery Fee
+                  </p>
+                  <p
+                    class="[font-family:arial] text-black font-bold text-[20px]"
+                  >
+                    $${Summary.fee}
+                  </p>
+                </div>
+              </div>
+              <div class="flex justify-between w-full capitalize">
+                <p class="[font-family:arial] text-black/60 text-[20px]">
+                  Total
+                </p>
+                <p class="[font-family:arial] text-black font-bold text-[24px]">
+                  $${(Summary.total-Summary.discountedPrice)+Summary.fee}
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div
+                class="px-4 py-3 bg-[#F0F0F0] flex gap-3 rounded-[60px] items-center w-full"
+              >
+                <img
+                  src="/assets/images/promo-code.png"
+                  alt="promo-code"
+                  class="opacity-60"
+                />
+                <input
+                  type="text"
+                  placeholder="Add promo code"
+                  class="text-black/60 outline-none"
+                />
+              </div>
+              <div
+                class="group cursor-pointer w-fit rounded-[60px] bg-black px-8 py-3 capitalize text-white"
+              >
+                <p class="text-white group-active:scale-85 transition-transform duration-100"> apply</p>
+              </div>
+            </div>
+            <div class="group cursor-pointer w-full py-5 bg-black rounded-[60px] flex justify-center items-center gap-3">
+              <p class="text-white group-active:scale-85 transition-transform duration-100">Go to Checkout</p>
+                <span
+                  class="iconify text-white text-[14px] h-fit "
+                  data-icon="formkit:arrowright"
+                ></span>
+            </div>
+  `
+}
+
+
+function addToCart(id) {
+  const product = ProductsArr.find(item => item.id === id);
+  const alreadyInCart = CartArr.some(item => item.id == id)
+
+  if (!product) {
+    alert(`Product ${id} not found!`);
+    return;
+  }
+
+
+  // add quantity when product already in cart
+  if (alreadyInCart) {
+    CartArr = CartArr.map(item => item.id == id
+      ? { ...item, quantity: (item.quantity || 1) + 1 }
+      : item
+    )
+  }
+  // push new product to cart array
+  else {
+    if (product) {
+      CartArr.push({ ...product, quantity: 1 });
+    }
+  }
+
+
+  localStorage.setItem("CartArray", JSON.stringify(CartArr))
+  cartSummary(CartArr)
+
+
+}
+
+
+
+function cartProductList(cartProducts) {
+  if(!cartProducts.length > 0){
+    cartContainer.innerHTML = `
+    <div class="flex justify-center flex-col gap-5 items-center py-5">
+              <div class="w-65">
+                <img src="/assets/images/empty-cart.png" alt="empty cart">
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <h2 class="[font-family:arial] font-bold text-3xl">
+                  Your cart is empty
+                </h2>
+                <p class="text-[20px] text-black/60 text-center">
+                  Looks like you have not added anything to your cart. Go ahead
+                  & explore top categories
+                </p>
+              </div>
+            </div>
+    `
+    return
+  }
+  for (let i = 0; i < cartProducts.length; i++) {
+    cartContainer.innerHTML += makeCartProduct(cartProducts[i])
+  }
+}
+cartProductList(CartArr)
+makeSummary()
+
+
+function makeCartProduct(cartProduct) {
+  const { imgUrl, name, price, quantity } = cartProduct
+  return `
+            <div class="flex gap-3 md:py-6 py-0 border-t border-black/10 w-full ">
+              <div
+                class="w-[124px] h-[124px] bg-[#F0EEED] bg-center bg-contain bg-no-repeat rounded-[8px]"
+                style="
+                  background-image: url('${imgUrl}');
+                "
+              ></div>
+
+              <div class="flex flex-col md:gap-2 w-full">
+                <div class="flex justify-between w-full sm:gap">
+                  <div class="">
+                    <h2
+                      class="[font-family:arial] font-bold md:text-[20px] text-[16px]"
+                    >
+                      ${name}
+                    </h2>
+                    <p class="capitalize text-[14px]">
+                      size: <span class="text-black/60">large</span>
+                    </p>
+                    <p class="capitalize text-[14px]">
+                      color: <span class="text-black/60">white</span>
+                    </p>
+                  </div>
+                  <div class="">
+                    <img
+                      src="/assets/images/delete-icon.png"
+                      alt="delete icon"
+                    />
+                  </div>
+                </div>
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="[font-family:arial] font-bold md:text-[24px] text-[20px]"
+                  >
+                    $${price * quantity}
+                  </h3>
+
+                  <div
+                    class="bg-[#F0F0F0] px-5 py-3 rounded-[60px] [font-family:arial] font-bold text-[20px] flex justify-between items-center w-[124px]"
+                  >
+                    <p class="h-fit cursor-pointer">-</p>
+                    <p class="text-[14px] h-fit cursor-pointer">${quantity}</p>
+                    <p class="h-fit cursor-pointer" >+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  `
+}
+
+
 

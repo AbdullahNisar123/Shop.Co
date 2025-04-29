@@ -23,9 +23,7 @@
 
     <!-- header start -->
     <div class="md:py-[24px] py-[20px] md:px-[80px] px-4">
-      <div
-        class="flex md:gap-[40px] items-center justify-between"
-      >
+      <div class="flex md:gap-[40px] items-center justify-between">
         <h1
           class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
         >
@@ -57,12 +55,18 @@
               class="outline-none focus:border-b focus:border-black w-full hidden md:block"
             />
           </div>
-          <div class="w-10 items-center flex cursor-pointer" id="user-icon">
-            <img
-              src="/assets/images/mdi-light-cart.png"
-              alt="cart-icon"
-              width="100"
-            />
+          <div id="cart-btn" class="hidden">
+            <a
+              href="/cart.html"
+              class="w-10 items-center flex cursor-pointer"
+              id="user-icon"
+            >
+              <img
+                src="/assets/images/mdi-light-cart.png"
+                alt="cart-icon"
+                width="100"
+              />
+            </a>
           </div>
           <!-- <div class="w-10 items-center hidden  cursor-pointer">
             <img src="/assets/images/user.png" alt="user-icon" width="100" />
@@ -661,14 +665,20 @@
       </div>
       <!-- footer section ent -->
     </footer>
+
+    <!-- script for icons -->
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+    <!-- script for remove signin and signup btn when login -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let authBtns = document.querySelectorAll("#auth-btns")[0];
+        let cartBtn = document.querySelectorAll("#cart-btn")[0];
         let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
         if (isLoggedIn) {
           authBtns.style.display = "none";
+          cartBtn.style.display = "block";
           authBtns.parentElement.innerHTML += `
            <button
               onclick = "logout(this)"
@@ -680,7 +690,7 @@
                 logout
               </p>
             </button>
-            `
+            `;
         }
       });
     </script>
