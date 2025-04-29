@@ -509,7 +509,7 @@ function makeSummary() {
                   <p
                     class="[font-family:arial] text-black font-bold text-[20px]"
                   >
-                    $${Summary.total}
+                    $${Summary.total.toFixed(2)}
                   </p>
                 </div>
                 <div class="flex justify-between w-full capitalize">
@@ -519,7 +519,7 @@ function makeSummary() {
                   <p
                     class="[font-family:arial] text-[#FF3333] font-bold text-[20px]"
                   >
-                    -$${Summary.discountedPrice}
+                    -$${Summary.discountedPrice.toFixed(2)}
                   </p>
                 </div>
                 <div class="flex justify-between w-full capitalize">
@@ -529,7 +529,7 @@ function makeSummary() {
                   <p
                     class="[font-family:arial] text-black font-bold text-[20px]"
                   >
-                    $${Summary.fee}
+                    $${Summary.fee.toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -538,7 +538,7 @@ function makeSummary() {
                   Total
                 </p>
                 <p class="[font-family:arial] text-black font-bold text-[24px]">
-                  $${(Summary.total + Summary.fee) - Summary.discountedPrice}
+                  $${((Summary.total + Summary.fee) - Summary.discountedPrice).toFixed(2)}
                 </p>
               </div>
             </div>
