@@ -283,6 +283,12 @@ function makeProductCart(Product) {
                   `: ""
     }
                 </div>
+                <button
+                onclick="addToCart('${Product.id}')"
+                  class="md:hidden block m-auto w-fit h-fit px-8  py-3 bg-black text-white rounded-full  transition-opacity duration-300 font-medium text-sm cursor-pointer border border-white/10 hover:bg-transparent hover:text-white"
+                >
+                  <p class=" uppercase" >Add to cart</p>
+                </button>
               </div>
             </div>
     `
@@ -291,8 +297,8 @@ function makeProductCart(Product) {
 
 // to reder the cart products on DOM
 function cartProductList(cartProducts) {
-  
-  if(!cartProducts.length > 0){
+
+  if (!cartProducts.length > 0) {
     cartContainer.innerHTML = `
     <div class="flex justify-center flex-col gap-5 items-center py-5">
               <div class="w-65">
@@ -378,7 +384,7 @@ function makeCartProduct(cartProduct) {
 function cartSummary(CartArr) {
   let total = 0
   let discountPercent = 0;
-  let discountedPrice = 0 
+  let discountedPrice = 0
   for (let i = 0; i < CartArr.length; i++) {
     total += CartArr[i].price * CartArr[i].quantity
     if (CartArr[i].discountPercent !== undefined) {
@@ -401,8 +407,8 @@ function cartSummary(CartArr) {
 
 
 // UI of cart products summary
-function makeSummary(){
-  if(!CartArr.length > 0){
+function makeSummary() {
+  if (!CartArr.length > 0) {
     cartSummaryContainer.innerHTML = `
     <h3 class="capitalize [font-family:arial] font-bold text-[24px]">
               order summary
@@ -532,7 +538,7 @@ function makeSummary(){
                   Total
                 </p>
                 <p class="[font-family:arial] text-black font-bold text-[24px]">
-                  $${(Summary.total+Summary.fee)-Summary.discountedPrice}
+                  $${(Summary.total + Summary.fee) - Summary.discountedPrice}
                 </p>
               </div>
             </div>
@@ -603,10 +609,10 @@ function addToCart(id) {
 
 
 // remove product from cart aand update cart product list also cart summary
-function removeFromCart(id){
+function removeFromCart(id) {
   CartArr = CartArr.filter(item => item.id !== id)
   console.log(CartArr)
-  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  localStorage.setItem("CartArray", JSON.stringify(CartArr))
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()
@@ -615,12 +621,12 @@ function removeFromCart(id){
 
 
 // to increment qantity of cart product and update ui
-function qantityIncrement  (id){
-  CartArr.map(item => item.id == id 
-    ? { ...item, quantity: item.quantity++}
+function qantityIncrement(id) {
+  CartArr.map(item => item.id == id
+    ? { ...item, quantity: item.quantity++ }
     : item
   )
-  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  localStorage.setItem("CartArray", JSON.stringify(CartArr))
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()
@@ -628,12 +634,12 @@ function qantityIncrement  (id){
 
 
 // to decrement qantity of cart product and update ui
-function qantityDecrement  (id){
+function qantityDecrement(id) {
   CartArr.map(item => item.id == id && item.quantity > 1
-    ? { ...item, quantity: item.quantity--}
+    ? { ...item, quantity: item.quantity-- }
     : item
   )
-  localStorage.setItem("CartArray",JSON.stringify(CartArr))
+  localStorage.setItem("CartArray", JSON.stringify(CartArr))
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()

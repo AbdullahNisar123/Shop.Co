@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- promo bar start -->
-    <div class="bg-black text-center w-ful py-1">
+    <div class="bg-black text-center w-ful py-1" id="promo-bar">
       <p class="text-white font-light md:text-[14px] text-[12px]">
         Sign up and get 20% off to your first order.
         <a
@@ -292,10 +292,14 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let authBtns = document.querySelectorAll("#auth-btns")[0];
+        let cartBtn = document.querySelectorAll("#cart-btn")[0];
+        let promoBar = document.querySelectorAll("#promo-bar")[0];
         let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
         if (isLoggedIn) {
           authBtns.style.display = "none";
+          promoBar.style.display = "none";
+          cartBtn.style.display = "block";
           authBtns.parentElement.innerHTML += `
            <button
               onclick = "logout(this)"
