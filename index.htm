@@ -55,7 +55,11 @@
               class="outline-none focus:border-b focus:border-black w-full hidden md:block"
             />
           </div>
-          <div id="cart-btn" class="hidden">
+          <div id="cart-btn" class="hidden md:block relative">
+            <div
+      id="cart-count"
+      class="absolute top-0 right-0 w-4 h-4 md:w-5 md:h-5 rounded-full bg-red-500 hidden items-center justify-center text-xs md:text-[14px] text-white"
+    ></div>
             <a
               href="/cart.html"
               class="w-10 items-center flex cursor-pointer"
@@ -672,6 +676,8 @@
     <!-- script for remove signin and signup btn when login -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        updateCartCount();
+
         let authBtns = document.querySelectorAll("#auth-btns")[0];
         let cartBtn = document.querySelectorAll("#cart-btn")[0];
         let promoBar = document.querySelectorAll("#promo-bar")[0];

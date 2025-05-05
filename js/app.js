@@ -50,7 +50,10 @@ let products = [
 
 
 // set products to localstorage
-localStorage.setItem("products", JSON.stringify(products))
+if (!localStorage.getItem("products")) {
+  localStorage.setItem("products", JSON.stringify(products));
+}
+
 
 
 
@@ -82,38 +85,24 @@ function signUp() {
   user.password = signupPassword.value.toLowerCase();
   let emailExist = userArr.some(check => check.email == user.email)
   if (user.name == "") {
-    setTimeout(() => {
-      errorMsg.innerHTML = ""
-    }, 3000);
-    errorMsg.innerHTML = "Please Enter Your Name."
+    showError(errorMsg,"Please Enter Your Name.")
     return
   }
   if (emailExist) {
-    setTimeout(() => {
-      errorMsg.innerHTML = ""
-    }, 3000);
-    errorMsg.innerHTML = "Oops! This email is already registered."
+    showError(errorMsg,"Oops! This email is already registered.")
     return
   }
   if (!user.email.includes("@")) {
-    setTimeout(() => {
-      errorMsg.innerHTML = ""
-    }, 3000)
-    errorMsg.innerHTML = "⚠️ Please include an '@' in your email."
+    showError(errorMsg,"⚠️ Please include an '@' in your email.")
     return
   }
   if (user.password.length <= 8) {
-    setTimeout(() => {
-      errorMsg.innerHTML = ""
-    }, 3000)
-    errorMsg.innerHTML = "🔒 Password must be at least 8 characters long."
+    showError(errorMsg,"🔒 Password must be at least 8 characters long")
     return
+
   }
   if (!terms.checked) {
-    setTimeout(() => {
-      errorMsg.innerHTML = ""
-    }, 3000)
-    errorMsg.innerHTML = "❗ Acceptance of Terms is required."
+    showError(errorMsg,"❗ Acceptance of Terms is required.")
     return
   }
 
@@ -150,17 +139,11 @@ function logIn() {
   let emailExist = usersData.some(check => check.email === loginEmail.value.toLowerCase())
   let passwordExist = usersData.some(check => check.password === loginPassword.value.toLowerCase())
   if (!emailExist) {
-    setTimeout(() => {
-      signinErrorMsg.innerHTML = ""
-    }, 3000)
-    signinErrorMsg.innerHTML = `⚠️ Email not registered.`
+    showError(signinErrorMsg,"⚠️ Email not registered.")
     return
   }
   if (!passwordExist) {
-    setTimeout(() => {
-      signinErrorMsg.innerHTML = ""
-    }, 3000)
-    signinErrorMsg.innerHTML = `❌ Wrong password. Try again.`
+    showError(signinErrorMsg,"❌ Wrong password. Try again.")
     return
   }
 
@@ -206,13 +189,15 @@ function logout(Ele) {
 // to reder the products on DOM
 function ProductList(products) {
   for (let i = 0; i < productsContainer.length; i++) {
+    let content = "";
     for (let j = 0; j < products.length; j++) {
-      let productCart = makeProductCart(products[j])
-      productsContainer[i].innerHTML += productCart
+      content += makeProductCart(products[j]);
     }
+    productsContainer[i].innerHTML = content;
   }
 }
-ProductList(ProductsArr)
+
+ProductList(ProductsArr)  
 
 
 
@@ -603,20 +588,21 @@ function addToCart(id) {
 
 
   localStorage.setItem("CartArray", JSON.stringify(CartArr))
+  updateCartCount()
   Summary = cartSummary(CartArr);
   makeSummary()
+
 }
 
 
 // remove product from cart aand update cart product list also cart summary
 function removeFromCart(id) {
   CartArr = CartArr.filter(item => item.id !== id)
-  console.log(CartArr)
   localStorage.setItem("CartArray", JSON.stringify(CartArr))
+  updateCartCount()
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()
-
 }
 
 
@@ -627,6 +613,7 @@ function qantityIncrement(id) {
     : item
   )
   localStorage.setItem("CartArray", JSON.stringify(CartArr))
+  updateCartCount()
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()
@@ -640,7 +627,40 @@ function qantityDecrement(id) {
     : item
   )
   localStorage.setItem("CartArray", JSON.stringify(CartArr))
+  updateCartCount()
   cartProductList(CartArr)
   Summary = cartSummary(CartArr);
   makeSummary()
 }
+
+// update cart count 
+function updateCartCount(){
+  let cartCount = document.getElementById("cart-count")
+  let cart = JSON.parse(localStorage.getItem("CartArray")) || []
+
+  if(cart.length > 0){
+    cartCount.style.display = "flex"
+    console.log("count number",cart.length)
+  }
+
+  if(cart.length < 1){
+    cartCount.style.display = "hidden"
+  }
+
+
+  let count = cart.length
+  if (cartCount) {
+    cartCount.textContent = count;
+  }
+  console.log("Cart updated. Count:", count);
+}
+
+// function for error msg
+function showError(element, message) {
+  element.innerHTML = message;
+  setTimeout(() => {
+    element.innerHTML = "";
+  }, 3000);
+}
+
+updateCartCount()
