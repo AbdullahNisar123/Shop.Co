@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP.CO | SignUp</title>
     <link rel="stylesheet" href="/css/output.css" />
-    <script src="/js/app.js" defer></script>
+    <script src="/js/app.js" type="module" defer></script>
   </head>
   <body>
     <div
@@ -16,7 +16,7 @@
           class="[font-family:'intefral-bold'] md:text-[32px] text-[25px] text-black flex items-center"
         >
           <a href="/index.htm"> shop.co </a>
-        </h1>
+        </h1>v 
         <a
           href="/signup.html"
           class="group px-7 md:px-10 py-3 uppercase bg-transparent border border-black hover:bg-black"
@@ -75,7 +75,6 @@
           </div>
           <button
             class="group cursor-pointer w-full bg-black text-white uppercase px-[100px] py-[15px] rounded-[62px]"
-            onclick="logIn()"
             id="login-btn"
           >
           <p class="group-active:scale-95 transition-transform duration-100">
@@ -85,17 +84,17 @@
 
           <p class="uppercase text-[12px] text-center">or use</p>
           <div class="flex items-center justify-center gap-5">
-            <div class="w-9 h-9 relative group cursor-pointer">
+            <div class="w-9 h-9 relative group cursor-pointer" id="google">
               <img
                 src="/assets/images/icons8-google.png"
                 alt="google icon"
                 width="100"
               />
-              <span
+              <!-- <span
                 class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1"
               >
                 Temporarily unavailable
-              </span>
+              </span> -->
             </div>
 
             <div class="w-9 h-9 relative group cursor-pointer">
