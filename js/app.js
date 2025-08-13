@@ -7,7 +7,7 @@ let signUpBtn = document.querySelectorAll("#signup-btn")[0]
 let loginEmail = document.querySelectorAll("#login-email")[0]
 let loginPassword = document.querySelectorAll("#login-password")[0]
 let signinErrorMsg = document.querySelectorAll("#signin-error-msg")[0]
-let loginBtn = document.querySelectorAll("#login-btn")[0]
+
 let productsContainer = document.querySelectorAll("#products-container")
 let cartContainer = document.querySelectorAll("#cart-container")[0]
 let cartSummaryContainer = document.querySelectorAll("#cart-summary")[0]
@@ -691,9 +691,11 @@ function logout(Ele) {
 // logic with firebase
 
 
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-import { getFirestore, collection, getDocs, } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { doc, getDoc,getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDHqpo5_tNtwivTKxdHHpI-Q9EmzmZuYoM",
   authDomain: "shop-co-92853.firebaseapp.com",
@@ -705,174 +707,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-
-const sbtn = document.getElementById("signup-btn")
-
-if (sbtn) {
-  sbtn.addEventListener("click", async () => {
-    let email = document.getElementById("signup-email").value
-    let password = document.getElementById("signup-password").value
-
-
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        email = ""
-        password = ""
-
-        sbtn.innerHTML = `
-    ⏳ Redirecting
-    <span class="loading-dots">
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-    </span>
-  `
-        setTimeout(() => {
-          location.href = "/signin.html"
-
-        }, 3000)
-      })
-      .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-
-      });
-
-  })
-}
-
-
-
-const lbtn = document.getElementById("login-btn")
-
-if (lbtn) {
-  lbtn.addEventListener("click", async () => {
-    let email = document.getElementById("login-email").value
-    let password = document.getElementById("login-password").value
-
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        loginBtn.innerHTML = `
-    ⏳ Redirecting
-    <span class="loading-dots">
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-    </span>
-`
-        setTimeout(() => {
-          location.href = "/index.html"
-
-        }, 3000)
-
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-
-      });
-
-  })
-}
-
-
-const google = document.getElementById('google')
-const provider = new GoogleAuthProvider();
-if (google) {
-  google.addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-
-        loginBtn.innerHTML = `
-    ⏳ Redirecting
-    <span class="loading-dots">
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-      <span class="dot">.</span>
-    </span>
-`
-        setTimeout(() => {
-          location.href = "/index.html"
-
-        }, 3000)
-      }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-
-        console.log(errorCode, errorMessage);
-
-      });
-
-  })
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateAuth();
-
-  // Attach logout handler ONCE, since button is already in HTML
-  const logOut = document.getElementById("logout-btn");
-  if (logOut) {
-    logOut.addEventListener("click", handleLogout);
-  }
-});
-
-function updateAuth() {
-  const authBtns = document.getElementById("auth-btns");
-  const cartBtn = document.getElementById("cart-btn");
-  const promoBar = document.getElementById("promo-bar");
-  const logoutBtn = document.getElementById("logout-btn");
-
-  onAuthStateChanged(auth, (user) => {
-    console.log(user);
-
-    if (user) {
-      // User is logged in
-
-      authBtns.style.display = "none";
-      cartBtn.style.display = "block";
-      promoBar.style.display = "none";
-      logoutBtn.style.display = "inline-block"; // show logout
-    } else {
-      // User is logged out
-      authBtns.style.display = "flex";
-      cartBtn.style.display = "none";
-      promoBar.style.display = "block";
-      logoutBtn.style.display = "none"; // hide logout
-    }
-  });
-}
-
-function handleLogout() {
-  console.log("Logging out...");
-  signOut(auth)
-    .then(() => {
-      updateAuth(); // recheck UI
-    })
-    .catch((error) => {
-      console.error("Logout failed", error);
-    });
-}
-
-
-
-
-
 const db = getFirestore(app);
-console.log(productsContainer);
 
 
 const readData = async () => {

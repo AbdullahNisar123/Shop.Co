@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="css/output.css">
+    <script type="module" src="js/products.js" defer></script>
+    <style>
+        /* Light Theme */
+        :root.light {
+            --bg: #f3f4f6;
+            --text: #000000;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --border: #BBCAD2;
+            --hover: #f9fafb;
+            --logout-hover: #db2727;
+            --logout-text: #ffffff;
+            --input-bg: #ffffff;
+        }
+
+        /* Dark Theme */
+        :root.dark {
+            --bg: #111827;
+            --text: #f9fafb;
+            --sidebar-bg: #000000;
+            --card-bg: #1f2937;
+            --border: #374151;
+            --hover: #374151;
+            --logout-hover: #db2727;
+            --logout-text: #ffffff;
+            --input-bg: #1f2937;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 px-6 py-5 flex flex-col bg-[var(--sidebar-bg)] sticky top-0 h-[100vh]">
+        <div class="flex items-center justify-between mb-6">
+            <button id="themeToggle"
+                class="relative w-14 h-7 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center transition-colors duration-300">
+                <span id="toggleCircle"
+                    class="absolute left-1 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center text-sm transition-all duration-300">
+                    🌙
+                </span>
+            </button>
+        </div>
+
+        <div class="flex items-center gap-3 px-3 py-2 rounded border border-[var(--border)] bg-[var(--input-bg)]">
+            <span class="iconify text-2xl h-fit " data-icon="iconamoon:search-light"></span>
+            <input type="text" placeholder="Search" class="text-[var(--text)] outline-none" />
+        </div>
+
+        <div class="py-8 border-b border-b-[var(--border)]">
+            <a href="/index.html"  target="_blank" class=" flex items-center gap-5 text-[var(--text)] hover:bg-[var(--hover)] px-3 py-2 rounded">
+                <div class="flex gap-2 items-center">
+                    <span class="iconify text-2xl h-fit " data-icon="material-symbols:storefront-outline"></span>
+                    View Live Site
+                </div>
+                <span class="iconify text-2xl h-fit " data-icon="cuida:open-in-new-tab-outline"></span>
+            </a>
+        </div>
+
+        <nav class="space-y-2 py-4">
+            <a href="dashboard.html" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Overview</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Analytics</a>
+            <a href="/add-product.html" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Add Product</a>
+            <a href="/products.html" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Products</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Tags</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Members</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-[var(--hover)]">Inquiries</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-[var(--logout-hover)] hover:text-[var(--logout-text)]">Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-5 px-6">
+        <!-- Header -->
+        <div class="flex justify-between items-center pb-7 border-b border-b-[var(--border)]">
+            <div>
+                <h1 class="text-4xl font-bold">Add Product</h1>
+                <p class="text-sm opacity-70">Fill out the details to add a new product</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <img src="assets/images/profile.png" class="rounded-full" />
+                <h2 class="text-2xl font-bold">Abdullah</h2>
+            </div>
+        </div>
+
+        <!-- Add Product Form -->
+        <div class="bg-[var(--card-bg)] mt-8 p-6 rounded-lg shadow-md max-w-2xl ">
+            <div class="space-y-5">
+                <!-- Product Name -->
+                <div>
+                    <label class="block mb-1 font-medium">Product Name</label>
+                    <input id="pname" type="text" placeholder="Enter product name"
+                        class="w-full px-4 py-3 rounded border bg-[var(--input-bg)] border-[var(--border)] text-[var(--text)] outline-none">
+                </div>
+
+                <!-- Price -->
+                <div>
+                    <label  class="block mb-1 font-medium">Price</label>
+                    <input id="pprice" type="number" placeholder="Enter price"
+                        class="w-full px-4 py-3 rounded border bg-[var(--input-bg)] border-[var(--border)] text-[var(--text)] outline-none">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label  class="block mb-1 font-medium">Description</label>
+                    <textarea id="pdes" rows="4" placeholder="Enter product description"
+                        class="w-full px-4 py-3 rounded border bg-[var(--input-bg)] border-[var(--border)] text-[var(--text)] outline-none"></textarea>
+                </div>
+
+                <!-- Image URL -->
+                <div>
+                    <label class="block mb-1 font-medium">Image URL</label>
+                    <input  id="pimg" type="url" placeholder="Enter image URL"
+                        class="w-full px-4 py-3 rounded border bg-[var(--input-bg)] border-[var(--border)] text-[var(--text)] outline-none">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submi"
+                id="add-product"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition">
+                    Add Product
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- script for icons -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <!-- Toggle Script -->
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        const toggleCircle = document.getElementById('toggleCircle');
+        const html = document.documentElement;
+
+        html.classList.add('light');
+
+        toggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            html.classList.toggle('light');
+
+            if (html.classList.contains('dark')) {
+                toggleCircle.style.transform = 'translateX(28px)';
+                toggleCircle.textContent = '☀️';
+            } else {
+                toggleCircle.style.transform = 'translateX(0px)';
+                toggleCircle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+
+</html>
